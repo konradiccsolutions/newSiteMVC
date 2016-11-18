@@ -10,15 +10,15 @@
                 <div class="row" style="margin-right:-100px;margin-left:-15px;margin-top: 70px;margin-bottom: 70px;padding-left: 76px;">
                     <div class="col-md-5">
                         <a href="">
-                            <img class="img-responsive img-hover" src="~/Img/@Url.Content(item.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px;margin-left: 80px;max-height: 185px; max-width: 246.66px; margin-top: 20px;">
+                            <img class="img-responsive img-hover" src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px;margin-left: 80px;max-height: 185px; max-width: 246.66px; margin-top: 20px;">
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="color:#3e77c3;font-weight: 700;">@Url.Content(item.Title)</h3>
-                        <p>@Url.Content(item.MainText)</p>
+                        <h3 style="color:#3e77c3;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.MainText)</p>
                         @if (!String.IsNullOrEmpty(item.ButtonText))
                         {
-                            <a class="btn btn-primary" href="portfolio-item.html">@Url.Content(item.ButtonText)</a>
+                            <a class="btn btn-primary" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
                         }
 
                     </div>
@@ -33,16 +33,17 @@
                 <div class="row" style="margin-right:-100px;margin-left:-15px;margin-top: 70px;margin-bottom: 70px;padding-left: 76px;">
                     <div class="col-md-5">
                         <a href="">
-                            <img class="img-responsive img-hover" src="~/Img/@Url.Content(item.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px;margin-left: 80px;max-height: 185px; max-width: 246.66px; margin-top: 20px;">
+                            <img class="img-responsive img-hover" src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px;margin-left: 80px;max-height: 185px; max-width: 246.66px; margin-top: 20px;">
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="color:#3e77c3;font-weight: 700;">@Url.Content(item.Title)</h3>
-                        <p>@Url.Content(item.MainText)</p>
+                        <h3 style="color:#3e77c3;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.MainText)</p>
                         @if (!String.IsNullOrEmpty(item.ButtonText))
                         {
-                            <a class="btn btn-primary" href="portfolio-item.html">@Url.Content(item.ButtonText)</a>
+                            <a class="btn btn-primary" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
                         }
+
                     </div>
                 </div>
             </div>
