@@ -1,0 +1,181 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div id="intro" style="padding-top:40px">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="intro-text">
+                        <img src="/Img/logo.png" style="height:300px">      
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="item active" style="background-color:#1b3754">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Exporting Excellence</h1>
+                    <p>ICC Solutions in partnership with the Duke of Edinburgh’s Award have launched an exciting new Exporting Excellence Programme in celebration of the 60th anniversary of the DofE Awards.</p>
+                    <p><button type="button" class="btn btn-lg btn-primary" style="color:darkblue;background-color:white">Read More</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-color:#703535">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>EMV in America</h1>
+                    <p>News, tips & advice for EMV Migration in America.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-color:#357068">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>21 April 2016</h1>
+                    <p>We are proud and honoured to announce the high accolade of receiving a Queen’s Award for Enterprise in the International Trade category.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div id="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+    @*<%--------------------- Imagepod section ---------------------%>*@
+
+<section id="ImagePods" class="" style="background-color:@Model.First().SectionBackgroundColour">
+    <div class="container">
+        <div class="about">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="color:@Model.First().SectionTextColour">Our Products</h3>
+                    <span class="text-center" style="border-bottom: 3px solid @Model.First().SectionTextUnderlineColour;"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.OrderBy(it => it.Priority))
+            {
+            <div class="col-md-4 img-portfolio" style="background-color:@Html.DisplayFor(modelItem => item.BackgroundColour)">
+                    <img src="~/Img/@Url.Content(item.ImageUrl)" class="img-responsive img-hover img-pod" alt="IMAGES" />
+                <h3>
+                    <a href="portfolio-item.html" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Url.Content(item.Title)</a>
+                </h3>
+                <p style="color:@Html.DisplayFor(modelItem => item.MainTextColour)">@Html.DisplayFor(modelItem => item.MainText)</p>
+                <a class="btn btn-primary" href="" style="color:@Html.DisplayFor(modelItem => item.ButtonTextColour); background-color:@Html.DisplayFor(modelItem => item.ButtonColour)">@Html.DisplayFor(modelItem => item.ButtonText)</a>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+<section id="Video" class="bg-light-gray">
+    <div class="container">
+        <div class="about">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>ICC Solutions</h3>
+                    <span></span>
+                    </div>
+                </div>
+            </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-default" style="margin-bottom: 90px;">
+                            <div class="panel-heading">
+                                <h4 style="color:white">
+                                    <i class="fa fa-fw fa-check"></i>
+                                    Panel Title
+                                </h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    some text bla blabla
+                                    <p> some text bla blabla</p>
+                                </p>
+                                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Click Me</button>
+                            </div>                         
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/0jdZsValPNg"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-default" style="margin-bottom: 90px;">
+                            <div class="panel-heading">
+                            <h4 style="color:white">
+                                <i class="fa fa-fw fa-check"></i>
+                                Panel Title
+                            </h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    some text bla blabla
+                                <p> some text bla blabla</p>
+                             
+                                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Click Me</button>    
+                            </div>                                     
+                        </div>
+                    </div>
+                </div>
+</section>
+
+
+
+<section id="Partners" style="box-shadow: 0px 200px 200px 144px;">
+    <div class="container">
+        <br /><br /><br />
+        <div class="col-lg-offset-2">
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="~/Img/outro-emv.png" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="~/Img/outro-export-champion.png" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="~/Img/outro-ioe.jpg" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="~/Img/outro-mag.png" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="~/Img/outro-mastercard-vendor-program.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>

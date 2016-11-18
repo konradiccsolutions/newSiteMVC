@@ -1,0 +1,10 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_Pages>
+
+<div class="col-md-3">
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+            @Html.ActionLink(item.Name, "GetActionResultForPage", "Admin", new { id = item.Name }, new { @class = "list-group-item" })
+        }       
+    </div>
+</div>
