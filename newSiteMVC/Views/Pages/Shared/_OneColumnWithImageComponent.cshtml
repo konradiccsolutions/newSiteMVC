@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 
 @{int count = 0;}
-@foreach (var item in Model)
+@foreach (var item in Model.Where(it => it.TypeId == "OneColumnImage"))
 {
     if (count++ % 2 == 0)
     {

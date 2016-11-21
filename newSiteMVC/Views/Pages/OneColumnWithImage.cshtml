@@ -6,26 +6,19 @@
 
 @*<%--------------------- Top Banner with moving image ---------------------%>*@
 
-<div id="intro" style="padding-top: 50px; padding-bottom:50px">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <h2>Awards</h2>
-                    <p class="intro-text">ICC Solutions take great pride in the number of industry awards and accreditation's we’ve achieved, which reflect the high-level of service that we deliver.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@Html.Partial("~/Views/Pages/Shared/_PageTopBanner.cshtml", Model)
 
 @*<%--------------------- One Column User Controls ---------------------%>*@
 
-@Html.Partial("_OneColumnWithImage", Model)
+@Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", Model)
 
 
 @*<%--------------------- Moving Background Image ---------------------%>*@
 
 @Html.Partial("_MovingBackgroundImage")
+
+
+
+
 
 

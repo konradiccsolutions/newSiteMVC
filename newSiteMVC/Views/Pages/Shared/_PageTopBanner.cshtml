@@ -1,0 +1,17 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+
+<div id="intro" style="padding-top: 50px; padding-bottom:50px">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    @foreach (var item in Model.Where(item => item.TypeId == "TopBanner"))
+                    {
+                        <h2>@item.PageNavbarTitle</h2>
+                        <p class="intro-text">@item.PageNavbarText</p>
+                    }               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
