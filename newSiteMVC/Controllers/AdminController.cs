@@ -51,11 +51,12 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour")] tbl_UserControl tbl_UserControl)
+        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,PageNavbarTitle,PageNavbarText")] tbl_UserControl tbl_UserControl)
         {
             if (ModelState.IsValid)
             {
                 tbl_UserControl.PageId = Request.QueryString["pageType"];
+                tbl_UserControl.TypeId = Request.QueryString["TypeId"];
                 db.tbl_UserControl.Add(tbl_UserControl);
                 db.SaveChanges();
                 return RedirectToAction("Index");
