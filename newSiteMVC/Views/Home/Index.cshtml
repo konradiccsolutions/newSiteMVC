@@ -92,10 +92,10 @@
             <div class="col-md-4 img-portfolio" style="background-color:@Html.DisplayFor(modelItem => item.BackgroundColour)">
                     <img src="~/Img/@Url.Content(item.ImageUrl)" class="img-responsive img-hover img-pod" alt="IMAGES" />
                 <h3>
-                    <a href="portfolio-item.html" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Url.Content(item.Title)</a>
+                    <a href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Url.Content(item.Title)</a>
                 </h3>
                 <p style="color:@Html.DisplayFor(modelItem => item.MainTextColour)">@Html.DisplayFor(modelItem => item.MainText)</p>
-                <a class="btn btn-primary" href="" style="color:@Html.DisplayFor(modelItem => item.ButtonTextColour); background-color:@Html.DisplayFor(modelItem => item.ButtonColour)">@Html.DisplayFor(modelItem => item.ButtonText)</a>
+                <a class="btn btn-primary" href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.ButtonTextColour); background-color:@Html.DisplayFor(modelItem => item.ButtonColour)">@Html.DisplayFor(modelItem => item.ButtonText)</a>
             </div>
             }
         </div>

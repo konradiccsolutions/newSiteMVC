@@ -7,7 +7,13 @@
 
 <div class="container body-content">
     <div class="row">
-     
+        <div class="col-md-3">
+            <div class="list-group">              
+                @Html.ActionLink("Home", "GetActionResultForPage", "Admin", new { id = "Home" }, new { @class = "list-group-item" })
+                @Html.ActionLink("Awards", "GetActionResultForPage", "Admin", new { id = "Awards" }, new { @class = "list-group-item" })
+                @Html.ActionLink("Charity", "GetActionResultForPage", "Admin", new { id = "Charity" }, new { @class = "list-group-item" })
+            </div>
+        </div>
         <div class="col-md-9" style="margin-top: -25px;">
             <br/>
             <p>
@@ -16,6 +22,47 @@
                 @Html.ActionLink("Edit Section", "EditSection", new {id = @Model.First().Id}, new {@class = "btn btn-info"})
             </p>
             <br/>
+            <table class="table" >
+                <thead>
+                <tr>                 
+                    <th>
+                        Edit Navbar Details
+                    </th>
+                </tr>
+                </thead>
+                <tbody>              
+                <tr>
+                    <td>
+                        @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarTitle)))
+                        {
+                            @item.PageNavbarTitle.ToString()
+                            ;
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarText)))
+                        {
+                            @item.PageNavbarText.ToString()
+                            ;
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarText)))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info", style= "margin-right: 5px;" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-success", style = "margin-right: 5px;" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" , style = "margin-right: 5px;" })
+                            @Html.HiddenFor(modelItem => item.Id)
+                        }
+                    </td>
+                </tr>
+               
+                </tbody>
+            </table>
             @using (Html.BeginForm("UpdateTableOrder", "Admin", FormMethod.Post))
             {
                 <table class="table">
@@ -40,7 +87,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Where(item => String.IsNullOrEmpty(item.PageNavbarTitle)))
                     {
                         <tr id="@item.Id">
                             <td class="priority">
@@ -57,9 +104,9 @@
                                 @Html.DisplayFor(modelItem => item.Active)
                             </td>                          
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-info"})
-                                @Html.ActionLink("Details", "Details", new {id = item.Id}, new {@class = "btn btn-success"})
-                                @Html.ActionLink("Delete", "Delete", new {id = item.Id}, new {@class = "btn btn-danger"})
+                                @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-info", style = "margin-bottom: 5px;" })
+                                @Html.ActionLink("Details", "Details", new {id = item.Id}, new {@class = "btn btn-success", style = "margin-bottom: 5px;" })
+                                @Html.ActionLink("Delete", "Delete", new {id = item.Id}, new {@class = "btn btn-danger", style = "margin-bottom: 5px;" })
                                 @Html.HiddenFor(modelItem => item.Id)
                             </td>
                         </tr>

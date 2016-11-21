@@ -48,10 +48,13 @@ namespace newSiteMVC.Models
 
         public string SectionTextUnderlineColour { get; set; }
 
-        public int? Priority
-        {
-            get { return _priority; }
-            set { _priority = value; }
-        }
+        public int? Priority { get; set; }
+
+        public string PageNavbarTitle { get; set; }
+
+        public string PageNavbarText { get; set; }
+
+
+
     }
 }

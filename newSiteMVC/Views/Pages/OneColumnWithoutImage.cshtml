@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "OneColumnWithoutImage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*<%--------------------- Top Banner with moving image ---------------------%>*@
 
-<div id="intro" style="padding-top:100px">
+<div id="intro" style="padding-top: 50px; padding-bottom:50px">
     <div class="intro-body">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <h2>Awards</h2>
+                    <h2>Charity</h2>
                     <p class="intro-text">ICC Solutions take great pride in the number of industry awards and accreditation's we’ve achieved, which reflect the high-level of service that we deliver.</p>
                 </div>
             </div>
@@ -27,3 +27,7 @@
 @*<%--------------------- Moving Background Image ---------------------%>*@
 
 @Html.Partial("_MovingBackgroundImage")
+
+
+
+
