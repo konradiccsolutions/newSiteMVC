@@ -59,7 +59,7 @@ namespace newSiteMVC.Controllers
                 tbl_UserControl.TypeId = Request.QueryString["TypeId"];
                 db.tbl_UserControl.Add(tbl_UserControl);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
             }
 
             return View(tbl_UserControl);
@@ -182,19 +182,18 @@ namespace newSiteMVC.Controllers
 
         [HttpPost, ActionName("UpdateTableOrder")]
         public ActionResult UpdateTableOrder()
-        {
-            List<tbl_UserControl> tbl_UserControl = db.tbl_UserControl.ToList();
-
+        {                
             string[] newOrder = Request.Form["item.Priority"].ToString().Split(',');
             string[] id = Request.Form["item.Id"].ToString().Split(',');
-
+            string pageId = null;
             for (int i = 0; i <= newOrder.Length-1; i++)
             {
                 tbl_UserControl newTbls = db.tbl_UserControl.Find(Int32.Parse(id[i]));
                 newTbls.Priority = Int32.Parse(newOrder[i]);
+                pageId = newTbls.PageId;
                 db.SaveChanges();
             }                     
-            return RedirectToAction("Index");
+            return Redirect("/Admin/GetActionResultForPage/" + pageId);
         }
 
 

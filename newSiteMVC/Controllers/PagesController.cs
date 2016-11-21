@@ -14,13 +14,13 @@ namespace newSiteMVC.Controllers
 
         public ActionResult OneColumnWithImage(string pageId)
         {
-            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).ToList();
+            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).OrderBy(it => it.Priority).ToList();
             //ViewBag.Title = tbl_UserControls.FirstOrDefault().
             return View(tbl_UserControls);
         }
         public ActionResult OneColumnWithoutImage(string pageId)
         {
-            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).ToList();
+            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).OrderBy(it => it.Priority).ToList();
             return View(tbl_UserControls);
         }
 
