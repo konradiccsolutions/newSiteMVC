@@ -16,111 +16,44 @@
         </div>
         <div class="col-md-9" style="margin-top: -25px;">
             <br/>
-            <h1>Update @Model.FirstOrDefault().PageId Page</h1>
-            <br/><br/>
-            @*<-----------------Table displaying the navbar data----------------->*@
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>
-                        Edit Navbar Details
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarTitle)))
-                        {
-                            @item.PageNavbarTitle.ToString()
-                            ;
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarText)))
-                        {
-                            @item.PageNavbarText.ToString()
-                            ;
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarText)))
-                        {
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "margin-right: 5px; min-width: 70px" })
-                            @Html.HiddenFor(modelItem => item.Id)
-                        }
-                    </td>
-                </tr>
-
-                </tbody>
-            </table>
             
-            <br />
-            <h2>Update @Model.FirstOrDefault().PageId Page Components</h2>
-            <br /><br />
-            <p>
-                @Html.ActionLink("Create New", "Create", null, new {pageType = @Model.First().PageId, typeId = @Model.First().TypeId}, new {@class = "btn btn-warning"})
+            <h1>Update @Model.FirstOrDefault().PageId Page</h1>
+            
+            
+            @*<-----------------Load components for a selected page----------------->*@           
+            @{
+                var listOfTypes = new List<string>();
 
-                @Html.ActionLink("Edit Section", "EditSection", new {id = @Model.First().Id}, new {@class = "btn btn-info"})
-            </p>
-            <br/>
-        
-            @using (Html.BeginForm("UpdateTableOrder", "Admin", FormMethod.Post))
-            {
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>
-                            Order
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Title)
-                        </th>
-
-                        <th>
-                            @Html.DisplayNameFor(model => model.MainText)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Active)
-                        </th>
-                        <th>
-
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var item in Model.Where(item => String.IsNullOrEmpty(item.PageNavbarTitle)))
+                foreach (var item in Model)
+                {
+                    if (!listOfTypes.Contains(item.TypeId))
                     {
-                        <tr id="@item.Id">
-                            <td class="priority">
-                                @Html.EditorFor(modelItem => item.Priority, new { htmlAttributes = new { @class = "input-sm" , style = "width:55px" }})
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MainText)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Active)
-                            </td>                          
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-info", style = "margin-bottom: 5px;min-width: 70px" })
-                                @Html.ActionLink("Details", "Details", new {id = item.Id}, new {@class = "btn btn-success", style = "margin-bottom: 5px;min-width: 70px" })
-                                @Html.ActionLink("Delete", "Delete", new {id = item.Id}, new {@class = "btn btn-danger", style = "margin-bottom: 5px;min-width: 70px" })
-                                @Html.HiddenFor(modelItem => item.Id)
-                            </td>
-                        </tr>
+                        listOfTypes.Add(item.TypeId);
                     }
-                    </tbody>
-                </table>
-                <input type="submit" value="Save Order" class="btn btn-primary"/>
 
+                }
+            }
+           
+            @foreach (var type in listOfTypes)
+            {
+                if (type != "TopBanner")
+                {
+                    var newModel = Model.Where(it => it.TypeId == type);
+                    <br/>
+                    <h2>@type</h2>
+                    <br/>
+                    @Html.Partial("~/Views/Admin/Shared/_ControlButtons.cshtml", newModel)
+                    <br />
+                    @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel)
+                }
+                else
+                {
+                    <br />
+                    <h2>@type</h2>
+                    <br />
+                    var newModel = Model.Where(it => it.TypeId == type);
+                    @Html.Partial("~/Views/Admin/Shared/_TopBanner.cshtml", newModel)
+                }
             }
         </div>
         </div>

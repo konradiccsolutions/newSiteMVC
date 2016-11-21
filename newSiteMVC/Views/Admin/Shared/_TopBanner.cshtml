@@ -1,0 +1,41 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Top Banner Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarTitle)))
+                {
+                    @item.PageNavbarTitle.ToString()
+                    ;
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarText)))
+                {
+                    @item.PageNavbarText.ToString()
+                    ;
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @foreach (var item in Model.Where(item => !String.IsNullOrEmpty(item.PageNavbarText)))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "margin-right: 5px; min-width: 70px" })
+                    @Html.HiddenFor(modelItem => item.Id)
+                }
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -248,6 +248,9 @@
     <Content Include="Img\biglogo.png" />
     <Content Include="Img\canada.png" />
     <Content Include="Img\card-testing.jpg" />
+    <Content Include="Img\charity-cheshire-connect.jpg" />
+    <Content Include="Img\charity-dofe.png" />
+    <Content Include="Img\charity-warrington-youth-club.jpg" />
     <Content Include="Img\china.png" />
     <Content Include="Img\e.png" />
     <Content Include="Img\iccbanner.jpg" />
@@ -342,6 +345,9 @@
     <Content Include="Views\Pages\OneColumnWithoutImage.cshtml" />
     <Content Include="Views\Pages\OneColumnWithImage.cshtml" />
     <Content Include="Views\Pages\Shared\_PageTopBanner.cshtml" />
+    <Content Include="Views\Admin\Shared\_TopBanner.cshtml" />
+    <Content Include="Views\Admin\Shared\_ControlButtons.cshtml" />
+    <Content Include="Views\Admin\Shared\_ContentTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

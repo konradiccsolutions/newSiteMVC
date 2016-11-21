@@ -199,7 +199,7 @@ namespace newSiteMVC.Controllers
 
         public ActionResult GetActionResultForPage(string id)
         {
-            List<tbl_UserControl> tbl_UserControl = db.tbl_UserControl.Where(it => it.PageId == id).ToList();
+            List<tbl_UserControl> tbl_UserControl = db.tbl_UserControl.Where(it => it.PageId == id).OrderBy(it => it.Priority).ToList();
             return View("Index",tbl_UserControl);
         }
 
