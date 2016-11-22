@@ -1,3 +1,5 @@
+using System.Web.Mvc;
+
 namespace newSiteMVC.Models
 {
     using System;
@@ -13,10 +15,13 @@ namespace newSiteMVC.Models
         [Key]
         public int Id { get; set; }
 
+        [AllowHtml]
         public string Title { get; set; }
 
+        [AllowHtml]
         public string Subtitle { get; set; }
 
+        [AllowHtml]
         public string MainText { get; set; }
 
         [StringLength(20)]

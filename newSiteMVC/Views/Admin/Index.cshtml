@@ -40,19 +40,23 @@
                 {
                     var newModel = Model.Where(it => it.TypeId == type);
                     <br/>
-                    <h2>@type</h2>
-                    <br/>
-                    @Html.Partial("~/Views/Admin/Shared/_ControlButtons.cshtml", newModel)
-                    <br />
-                    @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel)
+                    <div style="border-bottom:2px dotted black; padding-bottom:20px">
+                        <h2>@type</h2>
+                        <br />
+                        @Html.Partial("~/Views/Admin/Shared/_ControlButtons.cshtml", newModel)
+                        <br />
+                        @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel)
+                    </div>
                 }
                 else
                 {
                     <br />
+                  
                     <h2>@type</h2>
                     <br />
                     var newModel = Model.Where(it => it.TypeId == type);
                     @Html.Partial("~/Views/Admin/Shared/_TopBanner.cshtml", newModel)
+                     
                 }
             }
         </div>

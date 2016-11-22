@@ -1,0 +1,33 @@
+﻿
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            @*<img src="/Img/logo.png" style="padding-left: -19px;width: 65px;margin-left: -380px;margin-bottom: 10px;margin-top: 10px;">*@
+            <ul class="nav navbar-nav">
+                <li><a href="~/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About ICC<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">About Us</a></li>
+                        <li>@Html.ActionLink("Awards", "OneColumnWithImage", "Pages", new { pageId = "Awards" }, null)</li>
+                        <li>@Html.ActionLink("Charity", "OneColumnWithoutImage", "Pages", new { pageId = "Charity" }, null)</li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">In The News</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>
+                </li>
+
+                <li>@Html.ActionLink("Admin", "GetActionResultForPage", "Admin", new { id = "Home" }, new { @class = "" })</li>
+            </ul>
+        </div>
+    </div>
+</div>

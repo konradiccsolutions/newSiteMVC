@@ -252,6 +252,7 @@
     <Content Include="Img\charity-dofe.png" />
     <Content Include="Img\charity-warrington-youth-club.jpg" />
     <Content Include="Img\china.png" />
+    <Content Include="Img\device-testing.jpg" />
     <Content Include="Img\e.png" />
     <Content Include="Img\iccbanner.jpg" />
     <Content Include="Img\intro-bg.jpg" />
@@ -263,6 +264,9 @@
     <Content Include="Img\outro-ioe.jpg" />
     <Content Include="Img\outro-mag.png" />
     <Content Include="Img\outro-mastercard-vendor-program.png" />
+    <Content Include="Img\script-tools.png" />
+    <Content Include="Img\training-cards.jpg" />
+    <Content Include="Img\usacard1.jpg" />
     <Content Include="Img\vantiv.jpg" />
     <Content Include="Img\visa.png" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
@@ -278,6 +282,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.bootstrap.newsbox.js" />
+    <Content Include="Scripts\jquery.bootstrap.newsbox.min.js" />
     <Content Include="Scripts\jquery.isotope.js" />
     <Content Include="Scripts\jquery.minicolors.js" />
     <Content Include="Scripts\jquery.minicolors.min.js" />
@@ -348,6 +354,17 @@
     <Content Include="Views\Admin\Shared\_TopBanner.cshtml" />
     <Content Include="Views\Admin\Shared\_ControlButtons.cshtml" />
     <Content Include="Views\Admin\Shared\_ContentTable.cshtml" />
+    <Content Include="Views\Home\Shared\_HomePageCarousel.cshtml" />
+    <Content Include="Views\Home\Shared\_HomePageCarouselItem.cshtml" />
+    <Content Include="Views\Home\Shared\_HomePageCarouselItemActive.cshtml" />
+    <Content Include="Views\Pages\Shared\_ImagePodComponent.cshtml" />
+    <Content Include="Views\Pages\Shared\_ImagePodRoundComponent.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Shared\_AboutUsSection.cshtml" />
+    <Content Include="Views\Pages\Shared\_VideoPodComponent.cshtml" />
+    <Content Include="Views\Home\Shared\_NewsFeedWithImages.cshtml" />
+    <Content Include="Views\Home\Shared\_EventsFeedWithoutImages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

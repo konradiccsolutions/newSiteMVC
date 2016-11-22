@@ -15,22 +15,8 @@ namespace newSiteMVC.Controllers
 
         public ActionResult Index()
         {
-            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == "Home").ToList();
+            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == "Home").OrderBy(it => it.Priority).ToList();
             return View(tbl_UserControls);
-        }
-
-        public ActionResult Admin()
-        {
-            ViewBag.Message = "Admin Page";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }

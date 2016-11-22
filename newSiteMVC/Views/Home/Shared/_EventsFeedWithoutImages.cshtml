@@ -1,0 +1,21 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
+        <div class="panel-body" style="padding-top: 0px;margin-top: -50px;margin-bottom: -70px" ;>
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul id="news1" style="overflow-y: hidden; height: 210px;">
+                        @foreach (var item in Model.Where(it => it.TypeId == "EventsFeed"))
+                        {
+                            <li class="news-item">
+                                @item.Subtitle <a href="@item.UrlLink">@item.ButtonText</a>
+                            </li>
+                        }                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
