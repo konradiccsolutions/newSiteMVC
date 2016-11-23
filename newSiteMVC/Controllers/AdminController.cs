@@ -126,16 +126,21 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditSection([Bind(Include = "BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,SectionBackgroundColour,SectionTextColour,SectionTextUnderlineColour")] tbl_UserControl tbl_UserControl)
+        public ActionResult EditSection([Bind(Include = "BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,SectionBackgroundColour,SectionTextColour,SectionTextUnderlineColour")] tbl_UserControl tbl_UserControl, int id)
         {
             if (ModelState.IsValid)
             {
+                List<tbl_UserControl> lstControlsl= db.tbl_UserControl.ToList();
+                tbl_UserControl userControl = lstControlsl.Single(it => it.Id == id);
+
+                string typeId = userControl.TypeId;
+                string pageId = userControl.PageId;
 
                 using (var newContext = new StoreDB())
                 {
                     var list = newContext.tbl_UserControl;
 
-                    foreach (var el in list)
+                    foreach (var el in list.Where(el => el.TypeId == typeId && el.PageId == pageId))
                     {
                         el.BackgroundColour = tbl_UserControl.BackgroundColour;
                         el.ButtonColour = tbl_UserControl.ButtonColour;

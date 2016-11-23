@@ -5,7 +5,7 @@
 {
     if (count++ % 2 == 0)
     {
-        <section id="ImagePods" class="bg-light-gray" style="background-color: #dbdbdb;">
+        <section id="ImagePods" class="bg-dark-gray" style="background-color:@item.BackgroundColour">
             <div class="container">
                 <div class="row" style="margin-right:-100px;margin-left:-15px;margin-top: 70px;margin-bottom: 70px;padding-left: 76px;">
                     <div class="col-md-5">
@@ -14,11 +14,11 @@
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="color:#3e77c3;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
+                        <h3 style="color:@item.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
                         <p>@Html.DisplayFor(modelItem => item.MainText)</p>
                         @if (!String.IsNullOrEmpty(item.ButtonText))
                         {
-                            <a class="btn btn-primary" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
+                            <a class="btn btn-primary" style="background-color:@item.ButtonColour; color: @item.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
                         }
 
                     </div>
@@ -28,7 +28,7 @@
     }
     else
     {
-        <section id="ImagePods" class="bg-light-gray" style="">
+        <section id="ImagePods" class="bg-light-gray" style="background-color:@item.BackgroundColour">
             <div class="container">
                 <div class="row" style="margin-right:-100px;margin-left:-15px;margin-top: 70px;margin-bottom: 70px;padding-left: 76px;">
                     <div class="col-md-5">
@@ -37,11 +37,11 @@
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="color:#3e77c3;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
+                        <h3 style="color:@item.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
                         <p>@Html.DisplayFor(modelItem => item.MainText)</p>
                         @if (!String.IsNullOrEmpty(item.ButtonText))
                         {
-                            <a class="btn btn-primary" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
+                            <a class="btn btn-primary" style="background-color:@item.ButtonColour; color: @item.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
                         }
 
                     </div>

@@ -365,6 +365,7 @@
     <Content Include="Views\Pages\Shared\_VideoPodComponent.cshtml" />
     <Content Include="Views\Home\Shared\_NewsFeedWithImages.cshtml" />
     <Content Include="Views\Home\Shared\_EventsFeedWithoutImages.cshtml" />
+    <Content Include="Views\Home\Shared\_OurProductsSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,32 +1,14 @@
-﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+﻿@model newSiteMVC.Models.tbl_UserControl
 
-<section id="Products" style="background-color:@Model.First(it => it.TypeId == "ImagePod").SectionBackgroundColour">>
-    <div class="container" style="margin-top:-30px">
-        <div class="about">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 style="text-align: center">Our Products</h3>
-                    <span style="display:table;margin:0 auto;"></span>
-                </div>
-            </div>
+<li style="margin-bottom: 140px;">
+    <div class="products-item products-img-1 wow fadeInUp" style="background-image: url(../Img/@Model.ImageUrl); background-size: 425px; background-repeat: no-repeat; background-position: center;">
+        <div class="products-info" style="background-color: @Model.BackgroundColour">
+            <a href="#" style="text-decoration: none"><span>Learn More</span></a>
         </div>
-        <!-- Start team content -->
-        <ul class="team-grid">
-            @foreach (var item in Model.Where(it => it.TypeId == "ImagePod"))
-            {
-                <li style="margin-bottom: 140px;">
-                    <div class="team-item team-img-1 wow fadeInUp" style="background-image: url(../Img/@item.ImageUrl); background-size: 425px; background-repeat: no-repeat; background-position: center;">
-                        <div class="team-info">
-                            <a href="#" style="text-decoration: none"><span>Learn More</span></a>
-                        </div>
 
-                    </div>
-                    <div class="team-address">
-                        <a href=""style="text-decoration: none"><p>@item.Title</p></a>
-                        <span>@item.MainText</span>
-                    </div>
-                </li>
-            }
-        </ul>
     </div>
-</section>
+    <div class="products-address">
+        <a href=""><p style="text-decoration: none; color: @Model.TitleColour">@Model.Title</p></a>
+        <span style="color: @Model.MainTextColour">@Model.MainText</span>
+    </div>
+</li>

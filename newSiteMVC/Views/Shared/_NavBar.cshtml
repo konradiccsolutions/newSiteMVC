@@ -20,11 +20,51 @@
                         <li>@Html.ActionLink("Awards", "OneColumnWithImage", "Pages", new { pageId = "Awards" }, null)</li>
                         <li>@Html.ActionLink("Charity", "OneColumnWithoutImage", "Pages", new { pageId = "Charity" }, null)</li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Events</a></li>
+                        <li>@Html.ActionLink("Events", "OneColumnWithoutImage", "Pages", new { pageId = "Events" }, null)</li>
                         <li><a href="#">In The News</a></li>
                         <li><a href="#">Testimonials</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Products<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Device Testing</a></li>
+                        <li><a href="#">Vantiv VIABLE</a></li>
+                        <li><a href="#">Host Simulation</a></li>
+                        <li><a href="#">Training Cards</a></li>
+                        <li><a href="#">Developer Tool</a></li>
+                        <li><a href="#">Card Testing</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Export</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMV in the USA<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">About EMV</a></li>
+                        <li><a href="#">Why Choose Us?</a></li>
+                        <li>@Html.ActionLink("US Products", "OneColumnWithoutImage", "Pages", new { pageId = "USProducts" }, null)</li>
+                        <li><a href="#">Training Cards</a></li>
+                        <li><a href="#">EMV VAR Qualification program</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">ICC Support</a></li>
+                        <li><a href="#">Vantiv Support</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Regional Offices</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Distributors</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Client Area</a></li>
 
                 <li>@Html.ActionLink("Admin", "GetActionResultForPage", "Admin", new { id = "Home" }, new { @class = "" })</li>
             </ul>

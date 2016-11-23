@@ -4,36 +4,36 @@
     ViewBag.Title = "Admin Panel";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@*<-----------------Load components for a selected page----------------->*@
+
+@{
+    var listOfTypes = new List<string>();
+
+    foreach (var item in Model)
+    {
+        if (!listOfTypes.Contains(item.TypeId))
+        {
+            listOfTypes.Add(item.TypeId);
+        }
+
+    }
+
+}
 
 <div class="container body-content">
     <div class="row">
         <div class="col-md-3">
-            <div class="list-group">              
+            <div class="list-group">           
                 @Html.ActionLink("Home", "GetActionResultForPage", "Admin", new { id = "Home" }, new { @class = "list-group-item" })
-                @Html.ActionLink("Awards", "GetActionResultForPage", "Admin", new { id = "Awards" }, new { @class = "list-group-item" })
                 @Html.ActionLink("Charity", "GetActionResultForPage", "Admin", new { id = "Charity" }, new { @class = "list-group-item" })
+                @Html.ActionLink("Awards", "GetActionResultForPage", "Admin", new { id = "Awards" }, new { @class = "list-group-item" })              
             </div>
         </div>
         <div class="col-md-9" style="margin-top: -25px;">
             <br/>
             
-            <h1>Update @Model.FirstOrDefault().PageId Page</h1>
-            
-            
-            @*<-----------------Load components for a selected page----------------->*@           
-            @{
-                var listOfTypes = new List<string>();
-
-                foreach (var item in Model)
-                {
-                    if (!listOfTypes.Contains(item.TypeId))
-                    {
-                        listOfTypes.Add(item.TypeId);
-                    }
-
-                }
-            }
-           
+            <h1>Update @Model.FirstOrDefault().PageId Page</h1>            
+                   
             @foreach (var type in listOfTypes)
             {
                 if (type != "TopBanner")
@@ -50,8 +50,7 @@
                 }
                 else
                 {
-                    <br />
-                  
+                    <br />           
                     <h2>@type</h2>
                     <br />
                     var newModel = Model.Where(it => it.TypeId == type);
