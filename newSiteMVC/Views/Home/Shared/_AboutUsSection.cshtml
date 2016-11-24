@@ -5,24 +5,24 @@
         <div class="about">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 style="text-align: center" style="color: @Model.First(it => it.TypeId == "NewsFeed" && it.PageId == "Home").SectionTextColour">About ICC Solutions</h3>
+                    <h3 style="text-align: center" style="color: @Model.First(it => it.TypeId == "NewsFeed" && it.PageId == "Home").SectionTextColour">ICC Solutions</h3>
                     <span style="display:table;margin:0 auto; color: @Model.First(it => it.TypeId == "NewsFeed" && it.PageId == "Home").SectionTextUnderlineColour "></span>
                 </div>
             </div>
         </div>
         <div class="row">
 
-            @*<%--------------------- Main Section ---------------------%>*@
+            @*<%--------------------- News Section ---------------------%>*@
 
-            @Html.Partial("~/Views/Home/Shared/_NewsFeedWithImages.cshtml", Model)
+            @Html.Partial("~/Views/Home/Shared/_EventsFeedWithoutImages.cshtml", Model)
 
-            @*<%--------------------- Main Section ---------------------%>*@
+            @*<%--------------------- Video Section ---------------------%>*@
 
             @Html.Partial("~/Views/Pages/Shared/_VideoPodComponent.cshtml", Model)
 
-            @*<%--------------------- Main Section ---------------------%>*@
-
-            @Html.Partial("~/Views/Home/Shared/_EventsFeedWithoutImages.cshtml", Model)
+            @*<%--------------------- Events Section ---------------------%>*@
+            @Html.Partial("~/Views/Home/Shared/_NewsFeedWithImages.cshtml", Model)
+            
 
         </div>
     </div>
