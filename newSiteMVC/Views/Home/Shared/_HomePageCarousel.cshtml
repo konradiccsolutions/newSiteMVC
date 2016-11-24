@@ -5,8 +5,8 @@
     <ol class="carousel-indicators">
         @{
             int countSlides = 0;
-        }      
-        
+        }
+
         @foreach (var item in Model.Where(it => it.TypeId == "CarouselItem"))
         {
             if (countSlides < 1)
@@ -18,7 +18,7 @@
                 <li data-target="#myCarousel" data-slide-to="@countSlides"></li>
             }
 
-        }        
+        }
     </ol>
 
     <div class="carousel-inner" role="listbox">

@@ -1,24 +1,21 @@
-﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+﻿@model newSiteMVC.Models.tbl_UserControl
 
-@{int count = 0;}
-@foreach (var item in Model.Where(it => it.TypeId == "OneColumnImage"))
-{
-    if (count++ % 2 == 0)
+    @if (Model.Priority % 2 == 0)
     {
-        <section id="ImagePods" class="bg-dark-gray" style="background-color:@item.BackgroundColour">
+        <section id="ImagePods" class="bg-dark-gray" style="background-color:@Model.BackgroundColour">
             <div class="container">
                 <div class="row" style="margin-right:-100px;margin-left:-15px;margin-top: 70px;margin-bottom: 70px;padding-left: 76px;">
                     <div class="col-md-5">
                         <a href="">
-                            <img class="img-responsive img-hover" src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px; width: 330px; height:auto">
+                            <img class="img-responsive img-hover" src="~/Img/@Html.DisplayFor(modelItem => Model.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px; width: 330px; height:auto">
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="color:@item.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
-                        <p>@Html.DisplayFor(modelItem => item.MainText)</p>
-                        @if (!String.IsNullOrEmpty(item.ButtonText))
+                        <h3 class="header-colour" style="color:@Model.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => Model.Title)</h3>
+                        <p style="color: @Model.MainTextColour">@Html.DisplayFor(modelItem => Model.MainText)</p>
+                        @if (!String.IsNullOrEmpty(Model.ButtonText))
                         {
-                            <a class="btn btn-primary" style="background-color:@item.ButtonColour; color: @item.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
+                            <a class="btn btn-primary" style="background-color:@Model.ButtonColour; color: @Model.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => Model.ButtonText)</a>
                         }
 
                     </div>
@@ -28,20 +25,20 @@
     }
     else
     {
-        <section id="ImagePods" class="bg-light-gray" style="background-color:@item.BackgroundColour">
+        <section id="ImagePods" class="bg-light-gray" style="background-color:@Model.BackgroundColour">
             <div class="container">
                 <div class="row" style="margin-right:-100px;margin-left:-15px;margin-top: 70px;margin-bottom: 70px;padding-left: 76px;">
                     <div class="col-md-5">
                         <a href="">
-                            <img class="img-responsive img-hover" src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px;width: 330px; height:auto">
+                            <img class="img-responsive img-hover" src="~/Img/@Html.DisplayFor(modelItem => Model.ImageUrl)" alt="" style="box-shadow: 0px 0px 29px -12px;width: 330px; height:auto">
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="color:@item.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => item.Title)</h3>
-                        <p>@Html.DisplayFor(modelItem => item.MainText)</p>
-                        @if (!String.IsNullOrEmpty(item.ButtonText))
+                        <h3 class="header-colour" style="color:@Model.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => Model.Title)</h3>
+                        <p style="color: @Model.MainTextColour">@Html.DisplayFor(modelItem => Model.MainText)</p>
+                        @if (!String.IsNullOrEmpty(Model.ButtonText))
                         {
-                            <a class="btn btn-primary" style="background-color:@item.ButtonColour; color: @item.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => item.ButtonText)</a>
+                            <a class="btn btn-primary" style="background-color:@Model.ButtonColour; color: @Model.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => Model.ButtonText)</a>
                         }
 
                     </div>
@@ -49,4 +46,3 @@
             </div>
         </section>
     }
-}

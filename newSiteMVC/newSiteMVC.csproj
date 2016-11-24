@@ -265,6 +265,10 @@
     <Content Include="Img\outro-mag.png" />
     <Content Include="Img\outro-mastercard-vendor-program.png" />
     <Content Include="Img\script-tools.png" />
+    <Content Include="Img\SocialIcons\facebook-logo.png" />
+    <Content Include="Img\SocialIcons\linkedin-logo.png" />
+    <Content Include="Img\SocialIcons\twitter-logo.png" />
+    <Content Include="Img\SocialIcons\vimeo-square-logo.png" />
     <Content Include="Img\training-cards.jpg" />
     <Content Include="Img\usacard1.jpg" />
     <Content Include="Img\vantiv.jpg" />
@@ -348,8 +352,7 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Shared\_AddControllerView.cshtml" />
     <Content Include="Views\Shared\_AdminPagesBox.cshtml" />
-    <Content Include="Views\Pages\OneColumnWithoutImage.cshtml" />
-    <Content Include="Views\Pages\OneColumnWithImage.cshtml" />
+    <Content Include="Views\Pages\LoadPageContent.cshtml" />
     <Content Include="Views\Pages\Shared\_PageTopBanner.cshtml" />
     <Content Include="Views\Admin\Shared\_TopBanner.cshtml" />
     <Content Include="Views\Admin\Shared\_ControlButtons.cshtml" />
@@ -366,6 +369,9 @@
     <Content Include="Views\Home\Shared\_NewsFeedWithImages.cshtml" />
     <Content Include="Views\Home\Shared\_EventsFeedWithoutImages.cshtml" />
     <Content Include="Views\Home\Shared\_OurProductsSection.cshtml" />
+    <Content Include="Views\Pages\Shared\_OneColumnComponent.cshtml" />
+    <Content Include="Views\Admin\Shared\_AdminNavBar.cshtml" />
+    <Content Include="Views\Home\Shared\_PopUpBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

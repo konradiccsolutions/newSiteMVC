@@ -5,7 +5,7 @@
         <div class="about">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 style="color:@Model.First().SectionTextColour; text-align: center">Our Products</h3>
+                    <h3 class="header-colour" style="color:@Model.First().SectionTextColour; text-align: center">Our Products</h3>
                     <span class="text-center" style="border-bottom: 3px solid @Model.First().SectionTextUnderlineColour;display:table;margin: 0 auto;"></span>
                 </div>
             </div>
@@ -15,7 +15,7 @@
             {
                 <div class="col-md-4 img-portfolio" style="background-color:@Html.DisplayFor(modelItem => item.BackgroundColour)">
                     <img src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" class="img-responsive img-hover img-pod" alt="IMAGES" />
-                    <h3>
+                    <h3 class="header-colour">
                         <a href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Html.DisplayFor(modelItem => item.Title)</a>
                     </h3>
                     <p style="color:@Html.DisplayFor(modelItem => item.MainTextColour)">@Html.DisplayFor(modelItem => item.MainText)</p>

@@ -11,6 +11,10 @@ body {
     padding-right: 15px;
 }
 
+.header-colour {
+    color: #2e8be7;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -221,9 +225,9 @@ width: 600px;
 }
 .products-grid li {
 	display: inline-block;
-	height: 280px;
+	height: 260px;
 	margin: 20px 25px;
-	width: 25%;
+	width: 75%;
 }
 .products-item {
 	width: 100%;
@@ -356,4 +360,23 @@ width: 600px;
     border-bottom:1px dotted #555; 
 }
 
-/*News Feed Home page */
+#sticky {
+
+    background-color:darkred;
+    color: #fff;
+    font-size: 1em;
+    margin-top: 11px;
+    padding-bottom: 1px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+}
+
+#sticky.stick {
+    margin-top: 60px !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}

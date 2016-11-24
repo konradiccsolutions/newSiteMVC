@@ -51,7 +51,7 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,PageNavbarTitle,PageNavbarText")] tbl_UserControl tbl_UserControl)
+        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour")] tbl_UserControl tbl_UserControl)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace newSiteMVC.Controllers
                 }
                 db.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
         }
 
 
@@ -153,7 +153,7 @@ namespace newSiteMVC.Controllers
                     }
                     newContext.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
             }
             return View(tbl_UserControl);
         }
@@ -181,7 +181,7 @@ namespace newSiteMVC.Controllers
             tbl_UserControl tbl_UserControl = db.tbl_UserControl.Find(id);
             db.tbl_UserControl.Remove(tbl_UserControl);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
         }
 
 

@@ -55,11 +55,5 @@ namespace newSiteMVC.Models
 
         public int? Priority { get; set; }
 
-        public string PageNavbarTitle { get; set; }
-
-        public string PageNavbarText { get; set; }
-
-
-
     }
 }

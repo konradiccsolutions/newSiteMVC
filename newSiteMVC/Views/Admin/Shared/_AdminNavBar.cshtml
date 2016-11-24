@@ -1,0 +1,103 @@
+﻿<style>
+    @@media (min-width: 768px) {
+  .navbar2-collapse {
+    height: auto;
+    border-top: 0;
+    box-shadow: none;
+    max-height: none;
+    padding-left:0;
+    padding-right:0;
+  }
+  .navbar2-collapse.collapse {
+    display: block !important;
+    width: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .navbar2-collapse.in {
+    overflow-x: visible;
+  }
+
+.navbar2
+{
+	max-width:300px;
+	margin-right: 0;
+	margin-left: 0;
+    position: relative;
+}	
+
+.navbar2-nav,
+.navbar2-nav > li,
+.navbar2-left,
+.navbar2-right,
+.navbar2-header
+{float:none !important;}
+
+.navbar2-right .dropdown-menu {left:0;right:auto;}
+.navbar2-collapse .navbar2-nav.navbar2-right:last-child {
+    margin-right: 0;
+}
+}
+</style>
+
+<nav class="navbar2 navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Home", "GetActionResultForPage", "Admin", new { id = "Home" }, new { @class = "" })</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About ICC<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("About Us", "GetActionResultForPage", "Admin", new { id = "AboutUs" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Awards", "GetActionResultForPage", "Admin", new { id = "Awards" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Charity", "GetActionResultForPage", "Admin", new { id = "Charity" }, new { @class = "" })</li>
+                    <li role="separator" class="divider"></li>
+                    <li>@Html.ActionLink("Events", "GetActionResultForPage", "Admin", new { id = "Events" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("InTheNews", "GetActionResultForPage", "Admin", new { id = "InTheNews" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Testimonials", "GetActionResultForPage", "Admin", new { id = "Testimonials" }, new { @class = "" })</li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Products<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Device Testing</a></li>
+                    <li><a href="#">Vantiv VIABLE</a></li>
+                    <li><a href="#">Host Simulation</a></li>
+                    <li><a href="#">Training Cards</a></li>
+                    <li><a href="#">Developer Tool</a></li>
+                    <li><a href="#">Card Testing</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Export</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMV in the USA<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">About EMV</a></li>
+                    <li><a href="#">Why Choose Us?</a></li>
+                    <li>@Html.ActionLink("US Products", "LoadPageContent", "Pages", new { pageId = "USProducts" }, null)</li>
+                    <li><a href="#">Training Cards</a></li>
+                    <li><a href="#">EMV VAR Qualification program</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">ICC Support</a></li>
+                    <li><a href="#">Vantiv Support</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Regional Offices</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Distributors</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Client Area</a></li>
+        </ul>
+    </div>
+</nav>
