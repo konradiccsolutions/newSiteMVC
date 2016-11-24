@@ -12,7 +12,13 @@
         <div class="navbar-collapse collapse">
             @*<img src="/Img/logo.png" style="padding-left: -19px;width: 65px;margin-left: -380px;margin-bottom: 10px;margin-top: 10px;">*@
             <ul class="nav navbar-nav">
-                <li><a href="~/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
+                    <ul class="dropdown-menu">                      
+                        <li>@Html.ActionLink("Home New", "Index", "Home", new { pageId = "Home" }, null)</li>
+                        <li>@Html.ActionLink("Home Old", "Contact", "Home", new { pageId = "Home" }, null)</li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About ICC<span class="caret"></span></a>
                     <ul class="dropdown-menu">

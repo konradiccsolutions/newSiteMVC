@@ -1,17 +1,45 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = "Home Page";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@Html.Partial("~/Views/Home/Shared/_PopUpBanner.cshtml", Model)
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@*<%--------------------- Carousel ---------------------%>*@
+
+@Html.Partial("~/Views/Home/Shared/_HomePageCarousel.cshtml", Model)
+
+@*<%--------------------- Imagepod section ---------------------%>*@
+
+@Html.Partial("~/Views/Pages/Shared/_ImagePodComponent.cshtml", Model)
+
+
+@*<%--------------------- About ICC section ---------------------%>*@
+
+@Html.Partial("~/Views/Home/Shared/_AboutUsSection.cshtml", Model)
+
+
+<section id="Partners" style="box-shadow: 0px 200px 200px 144px;">
+
+    <div class="container">
+        <br /><br /><br />
+        <div class="col-md-12 col-lg-offset-1">
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <img class="img-responsive customer-img" style="margin-bottom: 30px" src="~/Img/outro-emv.png" alt="">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <img class="img-responsive customer-img" style="margin-bottom: 30px" src="~/Img/outro-export-champion.png" alt="">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <img class="img-responsive customer-img" style="margin-bottom: 30px" src="~/Img/outro-ioe.jpg" alt="">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <img class="img-responsive customer-img" style="margin-bottom: 30px" src="~/Img/outro-mag.png" alt="">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <img class="img-responsive customer-img" style="margin-bottom: 30px" src="~/Img/outro-mastercard-vendor-program.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>

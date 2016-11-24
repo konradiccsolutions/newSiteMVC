@@ -2,16 +2,21 @@
 
 @foreach (var item in Model.Where(it => it.TypeId == "PopUpBanner" && it.Active == true))
 {
-    <div id="sticky" style="background-color: @item.BackgroundColour">
-        <p style="text-align: center; margin-top: 10px; color: @item.TitleColour"><span class="glyphicon glyphicon-bell" style="color: @item.TitleColour"></span><a href="@item.UrlLink" style="text-decoration:none; color:@item.TitleColour;">@item.Title </a></p>
-        @*<p style="text-align:center; "><a href="#" onclick="setCookie()" style="color: @item.TitleColour"class="button large hpbottom">x</a></p>*@
-    </div>
-}
 
-<script type="text/javascript">
-    function setCookie() {
-        var today = new Date();
-        today.setHours(today.getHours() + 1);
-        document.cookie = 'check=testcookiess; expires=' + today + '; path=/';
-    }
-</script>
+    <div class="alert alert-danger" style="border: none;background-color:@item.BackgroundColour;margin-bottom: 0px;padding-top: 25px; position: fixed; z-index: 1;width: 100%">
+        <div style="text-align:center">
+            <a href="@item.UrlLink" style="text-decoration: none;color:@item.TitleColour">@item.Title</a>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div>
+
+    </div>
+  
+        }
+
+        <script type="text/javascript">
+            function setCookie() {
+                var today = new Date();
+                today.setHours(today.getHours() + 1);
+                document.cookie = 'check=testcookiess; expires=' + today + '; path=/';
+            }
+        </script>

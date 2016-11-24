@@ -18,5 +18,10 @@ namespace newSiteMVC.Controllers
             List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == "Home").OrderBy(it => it.Priority).ToList();
             return View(tbl_UserControls);
         }
+        public ActionResult Contact()
+        {
+            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == "Home").OrderBy(it => it.Priority).ToList();
+            return View(tbl_UserControls);
+        }
     }
 }
