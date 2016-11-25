@@ -15,8 +15,18 @@ namespace newSiteMVC.Controllers
 
         public ActionResult LoadOneColumnPageContent(string pageId)
         {
-            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).OrderBy(it => it.Priority).ToList();
-            return View(tbl_UserControls);
+            if (pageId == "InTheNews")
+            {
+                List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).OrderBy(it => it.Id).ToList();
+                return View(tbl_UserControls);
+            }
+            else
+            {
+                List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).OrderBy(it => it.Priority).ToList();
+                return View(tbl_UserControls);
+
+            }
+            return View();
         }
         public ActionResult LoadFullWidthPageContent(int id)
         {
