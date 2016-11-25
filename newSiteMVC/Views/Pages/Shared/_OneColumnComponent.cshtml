@@ -7,8 +7,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="header-colour" style="color:@Model.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => Model.Title)</h3>
-                    <p style="color: @Model.MainTextColour">@Html.DisplayFor(modelItem => Model.MainText)</p>
+                    <h3 class="header-colour" style="color:@Model.TitleColour;font-weight: 700;">@Html.Raw(HttpUtility.HtmlDecode(Model.Title))</h3>
+                    <p style="color: @Model.MainTextColour">@Html.Raw(HttpUtility.HtmlDecode(Model.MainText)) </p>
                     @if (!String.IsNullOrEmpty(Model.ButtonText))
                     {
                         <a class="btn btn-primary" style="background-color:@Model.ButtonColour; color: @Model.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => Model.ButtonText)</a>
@@ -25,8 +25,8 @@ else
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="header-colour" style="color:@Model.TitleColour;font-weight: 700;">@Html.DisplayFor(modelItem => Model.Title)</h3>
-                    <p style="color: @Model.MainTextColour">@Html.DisplayFor(modelItem => Model.MainText)</p>
+                    <h3 class="header-colour" style="color:@Model.TitleColour;font-weight: 700;">@Html.Raw(HttpUtility.HtmlDecode(Model.Title))</h3>
+                    <p style="color: @Model.MainTextColour">@Html.Raw(HttpUtility.HtmlDecode(Model.MainText)) </p>
                     @if (!String.IsNullOrEmpty(Model.ButtonText))
                     {
                         <a class="btn btn-primary" style="background-color:@Model.ButtonColour; color: @Model.ButtonTextColour" href="portfolio-item.html">@Html.DisplayFor(modelItem => Model.ButtonText)</a>

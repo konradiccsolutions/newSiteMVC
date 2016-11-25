@@ -256,3 +256,9 @@ C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\Microsoft.Owin.Security
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Debug\newSiteMVC.csprojResolveAssemblyReference.cache
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Debug\newSiteMVC.dll
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Debug\newSiteMVC.pdb
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\NetSpell.SpellChecker.dll
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\PagedList.dll
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\PagedList.Mvc.dll
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\RichTextEditor.dll
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\PagedList.xml
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\PagedList.Mvc.xml

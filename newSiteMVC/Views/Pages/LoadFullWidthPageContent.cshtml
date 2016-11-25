@@ -1,0 +1,26 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = "LoadOneColumnPageContent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<%--------------------- Top Banner with moving image ---------------------%>*@
+
+
+@*<%--------------------- Main page content ---------------------%>*@
+
+@foreach (var item in Model.Where(it => it.TypeId != "TopBanner"))
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", item)
+}
+
+
+@*<%--------------------- Moving Background Image ---------------------%>*@
+
+@Html.Partial("_MovingBackgroundImage")
+
+
+
+
+
+

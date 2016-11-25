@@ -12,7 +12,7 @@
         </div>
         <!-- Image pod content -->
         <ul class="products-grid">
-            @foreach (var item in Model.Where(it => it.TypeId == "ImagePod"))
+            @foreach (var item in Model.Where(it => it.TypeId == "ImagePod" && it.PageId == "Home"))
             {
                 @Html.Partial("~/Views/Pages/Shared/_ImagePodRoundComponent.cshtml", item)
             }

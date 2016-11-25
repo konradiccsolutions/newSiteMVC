@@ -1,0 +1,20 @@
+﻿@model newSiteMVC.Models.tbl_UserControl
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- First Blog Post -->
+            <h3>@Html.Raw(HttpUtility.HtmlDecode(Model.Title))</h3>                     
+            <hr>
+            <a href="blog-post.html">
+                <img class="img-responsive img-hover" src="/Img/News/@Model.ImageUrl" alt="img">
+            </a>
+            <hr>
+            <p>@Html.Raw(HttpUtility.HtmlDecode(Model.MainText))</p>
+
+            <hr>
+
+        </div>
+    </div>
+</div>

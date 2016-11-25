@@ -7,7 +7,7 @@
             int countSlides = 0;
         }
 
-        @foreach (var item in Model.Where(it => it.TypeId == "CarouselItem"))
+        @foreach (var item in Model.Where(it => it.TypeId == "CarouselItem" && it.PageId == "Home"))
         {
             if (countSlides < 1)
             {
@@ -23,7 +23,7 @@
 
     <div class="carousel-inner" role="listbox">
         @{ var countItems = 0;}
-        @foreach (var item in Model.Where(it => it.TypeId == "CarouselItem"))
+        @foreach (var item in Model.Where(it => it.TypeId == "CarouselItem" && it.PageId == "Home"))
         {
             if (countItems < 1)
             {

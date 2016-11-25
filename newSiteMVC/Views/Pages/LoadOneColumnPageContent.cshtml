@@ -1,0 +1,39 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = "LoadOneColumnPageContent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<%--------------------- Top Banner with moving image ---------------------%>*@
+
+@Html.Partial("~/Views/Pages/Shared/_PageTopBanner.cshtml", Model)
+
+@*<%--------------------- Main page content ---------------------%>*@
+
+@foreach (var item in Model.Where(it=> it.TypeId != "TopBanner" && it.TypeId != "NewsFeed"))
+{
+    if (string.IsNullOrEmpty(item.ImageUrl))
+    {
+        @Html.Partial("~/Views/Pages/Shared/_OneColumnComponent.cshtml", item)
+    }
+    else
+    {
+        @Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", item)
+    }
+}
+
+@foreach (var item in Model.Where(it => it.TypeId == "NewsFeed"))
+{
+    @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", item)
+}
+
+
+@*<%--------------------- Moving Background Image ---------------------%>*@
+
+@Html.Partial("_MovingBackgroundImage")
+
+
+
+
+
+

@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 
-<section id="AboutUs" class="bg-dark-gray" style="background-color:@Model.First(it => it.TypeId == "NewsFeed" && it.PageId == "Home").SectionBackgroundColour">
+<section id="AboutUs" class="bg-dark-gray" style="background-color:@Model.First(it => it.TypeId == "NewsFeed").SectionBackgroundColour">
     <div class="container" style="margin-top:-30px">
         <div class="about">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 style="text-align: center" style="color: @Model.First(it => it.TypeId == "NewsFeed" && it.PageId == "Home").SectionTextColour">ICC Solutions</h3>
-                    <span style="display:table;margin:0 auto; color: @Model.First(it => it.TypeId == "NewsFeed" && it.PageId == "Home").SectionTextUnderlineColour "></span>
+                    <h3 style="text-align: center" style="color: @Model.First(it => it.TypeId == "NewsFeed").SectionTextColour">ICC Solutions</h3>
+                    <span style="display:table;margin:0 auto; color: @Model.First(it => it.TypeId == "NewsFeed").SectionTextUnderlineColour "></span>
                 </div>
             </div>
         </div>
@@ -14,14 +14,14 @@
 
             @*<%--------------------- News Section ---------------------%>*@
 
-            @Html.Partial("~/Views/Home/Shared/_EventsFeedWithoutImages.cshtml", Model)
+            @Html.Partial("~/Views/Home/Shared/_InfoFeedWithoutImages.cshtml", Model)
 
             @*<%--------------------- Video Section ---------------------%>*@
 
             @Html.Partial("~/Views/Pages/Shared/_VideoPodComponent.cshtml", Model)
 
             @*<%--------------------- Events Section ---------------------%>*@
-            @Html.Partial("~/Views/Home/Shared/_NewsFeedWithImages.cshtml", Model)
+            @Html.Partial("~/Views/Home/Shared/_InfoFeedWithImages.cshtml", Model)
             
 
         </div>

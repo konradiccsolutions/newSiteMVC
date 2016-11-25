@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using newSiteMVC.Models;
 using newSiteMVC.Helpers;
+using PagedList;
 
 namespace newSiteMVC.Controllers
 {
@@ -12,11 +13,16 @@ namespace newSiteMVC.Controllers
     {
         private StoreDB db = new StoreDB();
 
-        public ActionResult LoadPageContent(string pageId)
+        public ActionResult LoadOneColumnPageContent(string pageId)
         {
             List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true && it.PageId == pageId).OrderBy(it => it.Priority).ToList();
             return View(tbl_UserControls);
         }
-       
+        public ActionResult LoadFullWidthPageContent(int id)
+        {
+            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Id == id).ToList();
+            return View(tbl_UserControls);
+        }
+
     }
 }

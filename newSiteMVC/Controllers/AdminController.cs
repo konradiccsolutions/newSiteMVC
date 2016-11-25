@@ -16,6 +16,7 @@ using System.Web.UI;
 
 namespace newSiteMVC.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private StoreDB db = new StoreDB();
