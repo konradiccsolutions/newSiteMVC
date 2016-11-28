@@ -1,88 +1,195 @@
-﻿
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            @*<img src="/Img/logo.png" style="padding-left: -19px;width: 65px;margin-left: -380px;margin-bottom: 10px;margin-top: 10px;">*@
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
-                    <ul class="dropdown-menu">                      
-                        <li>@Html.ActionLink("Home New", "Index", "Home", new { pageId = "Home" }, null)</li>
-                        <li>@Html.ActionLink("Home Old", "Contact", "Home", new { pageId = "Home" }, null)</li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About ICC<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">About Us</a></li>
-                        <li>@Html.ActionLink("Awards", "LoadOneColumnPageContent", "Pages", new { pageId = "Awards" }, null)</li>
-                        <li>@Html.ActionLink("Charity", "LoadOneColumnPageContent", "Pages", new { pageId = "Charity" }, null)</li>
-                        <li role="separator" class="divider"></li>
-                        <li>@Html.ActionLink("Events", "LoadOneColumnPageContent", "Pages", new { pageId = "Events" }, null)</li>
-                        <li>@Html.ActionLink("In The News", "LoadOneColumnPageContent", "Pages", new { pageId = "InTheNews" }, null)</li>
-                        <li>@Html.ActionLink("Testimonials", "LoadOneColumnPageContent", "Pages", new { pageId = "Testimonials" }, null)</li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Products<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Device Testing</a></li>
-                        <li><a href="#">Vantiv VIABLE</a></li>
-                        <li><a href="#">Host Simulation</a></li>
-                        <li><a href="#">Training Cards</a></li>
-                        <li><a href="#">Developer Tool</a></li>
-                        <li><a href="#">Card Testing</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Export</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMV in the USA<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">About EMV</a></li>
-                        <li><a href="#">Why Choose Us?</a></li>
-                        <li>@Html.ActionLink("US Products", "LoadOneColumnPageContent", "Pages", new { pageId = "USProducts" }, null)</li>
-                        <li><a href="#">Training Cards</a></li>
-                        <li><a href="#">EMV VAR Qualification program</a></li>
-                        <li><a href="#">Partnerships</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">ICC Support</a></li>
-                        <li><a href="#">Vantiv Support</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Regional Offices</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Distributors</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">Client Area</a></li>
-                @if (HttpContext.Current.User.Identity.IsAuthenticated)
-                {
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                @*<img src="/Img/logo.png" style="padding-left: -19px;width: 65px;margin-left: -380px;margin-bottom: 10px;margin-top: 10px;">*@
+                <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @Html.Partial("_LoginPartial")                            
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>@Html.ActionLink("Home New", "Index", "Home", new { pageId = "Home" }, null)</li>
+                            <li>@Html.ActionLink("Home Old", "Contact", "Home", new { pageId = "Home" }, null)</li>
                         </ul>
                     </li>
-                    
-                }
-            </ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About ICC<span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li><a href="#">About Us</a></li>
+                            <li>@Html.ActionLink("Awards", "LoadOneColumnPageContent", "Pages", new { pageId = "Awards" }, null)</li>
+                            <li>@Html.ActionLink("Charity", "LoadOneColumnPageContent", "Pages", new { pageId = "Charity" }, null)</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Events", "LoadOneColumnPageContent", "Pages", new { pageId = "Events" }, null)</li>
+                            <li>@Html.ActionLink("In The News", "LoadOneColumnPageContent", "Pages", new { pageId = "InTheNews" }, null)</li>
+                            <li>@Html.ActionLink("Testimonials", "LoadOneColumnPageContent", "Pages", new { pageId = "Testimonials" }, null)</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Products<span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li><a href="#">Device Testing</a></li>
+                            <li><a href="#">Vantiv VIABLE</a></li>
+                            <li><a href="#">Host Simulation</a></li>
+                            <li><a href="#">Training Cards</a></li>
+                            <li><a href="#">Developer Tool</a></li>
+                            <li><a href="#">Card Testing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Export</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMV in the USA<span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li><a href="#">About EMV</a></li>
+                            <li><a href="#">Why Choose Us?</a></li>
+                            <li>@Html.ActionLink("US Products", "LoadOneColumnPageContent", "Pages", new { pageId = "USProducts" }, null)</li>
+                            <li><a href="#">Training Cards</a></li>
+                            <li><a href="#">EMV VAR Qualification program</a></li>
+                            <li><a href="#">Partnerships</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support<span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li><a href="#">ICC Support</a></li>
+                            <li><a href="#">Vantiv Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Regional Offices</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Distributors</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" style="margin-left:60px">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Client Area <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu" style="min-width: 390px; padding-top:10px">
+                            <li style="margin-top: -40px;">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="social-buttons">
+                                            <p>ICC Solutions provides a download service for delivering product updates to its registered customers.</p>
+                                            <p>Please enter your Client ID and Password to access product download area.</p>
+                                        </div>
+                                        <br/>
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group col-lg-offset-1">
+                                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                            </div>
+                                            <div class="form-group col-lg-offset-1">
+                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                            </div>
+                                            <br/>
+                                            <div class="form-group">
+                                                <div class="col-sm-9 col-sm-offset-1">
+                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                </div>                                         
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <br/> <br/>
+                                    <div class="bottom text-center">
+                                        Forgotten your login details?  Contact support <a href="#"><b>here</b></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-envelope"></span><span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu" style="min-width: 490px;padding-top: 10px;left: -136px; max-height: 390px;">
+                            <li style="margin-top: -40px;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="form-horizontal" role="form" method="post" action="index.php">
+                                            <div class="form-group">
+                                                <label for="name" class="col-sm-3 control-label">First Name</label>
+                                                <div class="col-sm-7">
+                                                    <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name" class="col-sm-3 control-label">Last Name</label>
+                                                <div class="col-sm-7">
+                                                    <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email" class="col-sm-3 control-label">Email</label>
+                                                <div class="col-sm-7">
+                                                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email" class="col-sm-3 control-label">Telephone</label>
+                                                <div class="col-sm-7">
+                                                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message" class="col-sm-3 control-label">Message</label>
+                                                <div class="col-sm-7">
+                                                    <textarea class="form-control" rows="4" name="message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-7 col-sm-offset-3">
+                                                    <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary btn-block">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-6 col-sm-offset-2">
+                                                    
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span><span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu" style="min-width: 300px; max-height: 100px; padding-top:10px">
+                            <li style="margin-top: -40px;">
+                                <div class="row">
+                                    <div class="col-sm-6 col-sm-offset-1">
+                                        <div id="imaginary_container">
+                                            <div class="input-group stylish-input-group" style="width:220px">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <span class="input-group-addon">
+                                                    <button type="submit">
+                                                        <span class="glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>                           
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                @Html.Partial("_LoginPartial")
+                            </ul>
+                        </li>
+
+                    }
+                </ul>
+            </div>
         </div>
     </div>
-</div>

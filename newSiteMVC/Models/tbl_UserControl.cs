@@ -22,6 +22,7 @@ namespace newSiteMVC.Models
         public string Subtitle { get; set; }
 
         [AllowHtml]
+        [DataType(DataType.MultilineText)]
         public string MainText { get; set; }
 
         [StringLength(20)]

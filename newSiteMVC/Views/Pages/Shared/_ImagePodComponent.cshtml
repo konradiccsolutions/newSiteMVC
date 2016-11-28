@@ -14,7 +14,7 @@
             @foreach (var item in Model.Where(it => it.TypeId == "ImagePod"))
             {
                 <div class="col-md-4 img-portfolio" style="background-color:@Html.DisplayFor(modelItem => item.BackgroundColour)">
-                    <img src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" class="img-responsive img-hover img-pod" alt="IMAGES" />
+                    <img src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" class="img-responsive img-hover img-pod crop-height scale crop" alt="IMAGES" />
                     <h3 class="header-colour">
                         <a href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Html.DisplayFor(modelItem => item.Title)</a>
                     </h3>
