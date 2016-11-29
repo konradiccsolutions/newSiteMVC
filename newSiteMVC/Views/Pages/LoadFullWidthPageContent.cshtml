@@ -9,11 +9,10 @@
 
 @*<%--------------------- Main page content ---------------------%>*@
 
-@foreach (var item in Model.Where(it => it.TypeId != "TopBanner"))
+@foreach (var item in Model.Where(it => it.TypeId != "TopBanner" && it.PageId != "ContactUs"))
 {
     @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", item)
 }
-
 
 @*<%--------------------- Moving Background Image ---------------------%>*@
 

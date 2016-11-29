@@ -6,6 +6,8 @@
 }
 
 <script src="~/Scripts/jscolor.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
 
 <div class="container body-content">
     <div class="row">
@@ -123,24 +125,13 @@
 
                     <div class="col-md-offset-3" style="margin-left:100px; margin-top:-50px">
                         <input type="submit" value="Create" class="btn btn-default btn-danger" style="margin-bottom:30px" />
-                        <input value="Preview" class="btn btn-default btn-warning" onclick="CheckName()" style="margin-left:20px;margin-bottom:30px" />
                         <div>
                             @Html.ActionLink("Back to List", "Index")
                         </div>
                     </div>
 
 
-                </div>
-
-                    <div id="podDemo" class="col-md-4 img-portfolio" style="display:none; margin-top:-600px; margin-left:700px">
-                        <img id="imgDemo" class="img-responsive img-hover img-pod" alt="IMAGES" />
-                        <h3>
-                            <a id="titleDemo" href="portfolio-item.html"></a>
-                        </h3>
-                        <p id="mainTextDemo"></p>
-                        <a class="btn btn-primary" href="" id="buttonDemo"></a>
-                    </div>
-
+                </div>               
             }
 
             
@@ -171,54 +162,7 @@
                 }
 
             }
-            function CheckName() {
-
-
-                var title = document.getElementById('Title').value;
-                var mainText = document.getElementById('MainText').value;
-                var image = document.getElementById('ImageUrl').value;
-                var buttonText = document.getElementById('ButtonText').value;
-                var buttonColour = document.getElementById('ButtonColour').value;
-                var buttonTextColour = document.getElementById('ButtonTextColour').value;
-                var titleColour = document.getElementById('TitleColour').value;
-                var mainTextColour = document.getElementById('MainTextColour').value;
-                var podColour = document.getElementById('BackgroundColour').value;
-
-
-                if (title != '#FFFFFF') {
-                    document.getElementById("titleDemo").innerHTML = title;
-                }
-                if (mainText != '#FFFFFF') {
-                    document.getElementById("mainTextDemo").innerHTML = mainText;
-                }
-                if (image != '#FFFFFF') {
-                    document.getElementById("imgDemo").src = '/Img/' + image;
-                }
-                if (buttonText != '#FFFFFF') {
-                    document.getElementById("buttonDemo").innerHTML = buttonText;
-                }
-                if (buttonColour != '#FFFFFF') {
-                    document.getElementById("buttonDemo").style.backgroundColor = buttonColour;
-                }
-                if (buttonTextColour != '#FFFFFF') {
-                    document.getElementById("buttonDemo").style.color = buttonTextColour;
-                }
-                if (titleColour != '#FFFFFF') {
-                    document.getElementById("titleDemo").style.color = titleColour;
-                }
-                if (mainTextColour != '#FFFFFF') {
-                    document.getElementById("mainTextDemo").style.color = mainTextColour;
-                }
-                if (podColour != '#FFFFFF') {
-                    document.getElementById("podDemo").style.backgroundColor = podColour;
-                }
-
-                document.getElementById("podDemo").style.display = "block";
-
-                alert(document.getElementById('custom').value);
-
-            }
-
+  
         </script>
             
             <script type="text/javascript">

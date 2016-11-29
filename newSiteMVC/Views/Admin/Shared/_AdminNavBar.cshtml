@@ -52,7 +52,6 @@
                     <li>@Html.ActionLink("About Us", "GetActionResultForPage", "Admin", new { id = "AboutUs" }, new { @class = "" })</li>
                     <li>@Html.ActionLink("Awards", "GetActionResultForPage", "Admin", new { id = "Awards" }, new { @class = "" })</li>
                     <li>@Html.ActionLink("Charity", "GetActionResultForPage", "Admin", new { id = "Charity" }, new { @class = "" })</li>
-                    <li role="separator" class="divider"></li>
                     <li>@Html.ActionLink("Events", "GetActionResultForPage", "Admin", new { id = "Events" }, new { @class = "" })</li>
                     <li>@Html.ActionLink("InTheNews", "GetActionResultForPage", "Admin", new { id = "InTheNews" }, new { @class = "" })</li>
                     <li>@Html.ActionLink("Testimonials", "GetActionResultForPage", "Admin", new { id = "Testimonials" }, new { @class = "" })</li>
@@ -69,32 +68,31 @@
                     <li><a href="#">Card Testing</a></li>
                 </ul>
             </li>
-            <li><a href="#">Export</a></li>
+            <li>@Html.ActionLink("Export", "GetActionResultForPage", "Admin", new { id = "Export" }, new { @class = "" })</li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMV in the USA<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">About EMV</a></li>
-                    <li><a href="#">Why Choose Us?</a></li>
-                    <li>@Html.ActionLink("US Products", "LoadOneColumnPageContent", "Pages", new { pageId = "USProducts" }, null)</li>
-                    <li><a href="#">Training Cards</a></li>
-                    <li><a href="#">EMV VAR Qualification program</a></li>
-                    <li><a href="#">Partnerships</a></li>
+                    <li>@Html.ActionLink("About EMV", "GetActionResultForPage", "Admin", new { id = "AboutEMV" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Why Choose Us?", "GetActionResultForPage", "Admin", new { id = "WhyChooseUs" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("US Products", "GetActionResultForPage", "Admin", new { id = "USProducts" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("EMV VAR Qualification program", "GetActionResultForPage", "Admin", new { id = "EMVVar" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Partnerships", "GetActionResultForPage", "Admin", new { id = "Partnerships" }, new { @class = "" })</li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">ICC Support</a></li>
-                    <li><a href="#">Vantiv Support</a></li>
+                    <li>@Html.ActionLink("ICC Support", "GetActionResultForPage", "Admin", new { id = "ICCSupport" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Vantiv Support", "GetActionResultForPage", "Admin", new { id = "VantivSupport" }, new { @class = "" })</li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Regional Offices</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Distributors</a></li>
+                    <li>@Html.ActionLink("Contact Us", "GetActionResultForPage", "Admin", new { id = "ContactUs" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Regional Offices", "GetActionResultForPage", "Admin", new { id = "RegionalOffices" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Careers", "GetActionResultForPage", "Admin", new { id = "Careers" }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Distributors", "GetActionResultForPage", "Admin", new { id = "Distributors" }, new { @class = "" })</li>
                 </ul>
             </li>
             <li><a href="#">Client Area</a></li>

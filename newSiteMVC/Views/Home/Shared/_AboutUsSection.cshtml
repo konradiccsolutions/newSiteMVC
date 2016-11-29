@@ -18,7 +18,7 @@
 
             @*<%--------------------- Video Section ---------------------%>*@
 
-            @Html.Partial("~/Views/Pages/Shared/_VideoPodComponent.cshtml", Model)
+            @Html.Partial("~/Views/Pages/Shared/_VideoPodComponent.cshtml", Model.Where(it => it.PageId == "Home"))
 
             @*<%--------------------- Events Section ---------------------%>*@
             @Html.Partial("~/Views/Home/Shared/_InfoFeedWithImages.cshtml", Model)

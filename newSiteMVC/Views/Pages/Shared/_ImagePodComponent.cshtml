@@ -16,9 +16,9 @@
                 <div class="col-md-4 img-portfolio" style="background-color:@Html.DisplayFor(modelItem => item.BackgroundColour)">
                     <img src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" class="img-responsive img-hover img-pod crop-height scale crop" alt="IMAGES" />
                     <h3 class="header-colour">
-                        <a href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Html.DisplayFor(modelItem => item.Title)</a>
+                        <a href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.TitleColour)">@Html.Raw(HttpUtility.HtmlDecode(item.Title))</a>
                     </h3>
-                    <p style="color:@Html.DisplayFor(modelItem => item.MainTextColour)">@Html.DisplayFor(modelItem => item.MainText)</p>
+                    <p style="color:@Html.DisplayFor(modelItem => item.MainTextColour)">@Html.Raw(HttpUtility.HtmlDecode(item.MainText))</p>
                     <a class="btn btn-primary" href="@Html.DisplayFor(modelItem => item.UrlLink)" style="color:@Html.DisplayFor(modelItem => item.ButtonTextColour); background-color:@Html.DisplayFor(modelItem => item.ButtonColour)">@Html.DisplayFor(modelItem => item.ButtonText)</a>
                 </div>
             }

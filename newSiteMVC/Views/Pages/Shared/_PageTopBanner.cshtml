@@ -7,8 +7,8 @@
                 <div class="col-md-10 col-md-offset-1">
                     @foreach (var item in Model.Where(item => item.TypeId == "TopBanner"))
                     {
-                        <h2>@item.Title</h2>
-                        <p class="intro-text">@item.MainText</p>
+                        <h2>@Html.Raw(HttpUtility.HtmlDecode(item.Title))</h2>
+                        <p class="intro-text">@Html.Raw(HttpUtility.HtmlDecode(item.MainText))</p>
                     }               
                 </div>
             </div>

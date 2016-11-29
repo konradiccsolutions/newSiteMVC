@@ -1,4 +1,5 @@
-﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
     ViewBag.Title = "LoadOneColumnPageContent";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,16 +11,26 @@
 
 @*<%--------------------- Main page content ---------------------%>*@
 
-@foreach (var item in Model.Where(it=> it.TypeId != "TopBanner" && it.TypeId != "NewsFeed"))
+@foreach (var item in Model.Where(it => it.TypeId != "NewsFeed"))
 {
-    if (string.IsNullOrEmpty(item.ImageUrl))
+    if ( item.TypeId != "TopBanner")
     {
-        @Html.Partial("~/Views/Pages/Shared/_OneColumnComponent.cshtml", item)
+        if (string.IsNullOrEmpty(item.ImageUrl))
+        {
+            @Html.Partial("~/Views/Pages/Shared/_OneColumnComponent.cshtml", item)
+        }
+        else
+        {
+            @Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", item)
+        }
     }
-    else
+
+    if(item.PageId == "ContactUs")
     {
-        @Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", item)
+        @Html.Partial("~/Views/Pages/Shared/_FullWidthContactPage.cshtml", item)
+
     }
+
 }
 
 @foreach (var item in Model.Where(it => it.TypeId == "NewsFeed"))
