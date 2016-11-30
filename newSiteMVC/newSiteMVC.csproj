@@ -1398,6 +1398,7 @@
     <Content Include="Views\Pages\LoadFullWidthPageContent.cshtml" />
     <Content Include="Views\Pages\Shared\_OneColumnWithLinkComponent.cshtml" />
     <Content Include="Views\Pages\Shared\_FullWidthContactPage.cshtml" />
+    <Content Include="Views\Pages\Shared\_TwoColumnComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

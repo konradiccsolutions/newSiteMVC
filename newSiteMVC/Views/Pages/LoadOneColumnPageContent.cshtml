@@ -13,7 +13,7 @@
 
 @foreach (var item in Model.Where(it => it.TypeId != "NewsFeed"))
 {
-    if ( item.TypeId != "TopBanner")
+    if ( item.TypeId != "TopBanner" && item.TypeId != "TwoColumn" && item.TypeId != "VideoPod")
     {
         if (string.IsNullOrEmpty(item.ImageUrl))
         {
@@ -24,20 +24,24 @@
             @Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", item)
         }
     }
-
-    if(item.PageId == "ContactUs")
-    {
-        @Html.Partial("~/Views/Pages/Shared/_FullWidthContactPage.cshtml", item)
-
-    }
-
 }
-
-@foreach (var item in Model.Where(it => it.TypeId == "NewsFeed"))
+@if (@Request.RawUrl == "/Page/InTheNews")
 {
-    @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", item)
-}
+    @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", Model)
 
+}
+      
+@if (@Request.RawUrl == "/Page/ContactUs")
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthContactPage.cshtml", Model)
+
+}
+            
+@if (@Request.RawUrl == "/Page/TrainingCards")
+            {
+    @Html.Partial("~/Views/Pages/Shared/_TwoColumnComponent.cshtml", Model)
+
+}
 
 @*<%--------------------- Moving Background Image ---------------------%>*@
 

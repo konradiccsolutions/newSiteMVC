@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
-    ViewBag.Title = "LoadOneColumnPageContent";
+    ViewBag.Title = @Request.QueryString["pageId"];
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 

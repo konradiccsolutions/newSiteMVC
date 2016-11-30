@@ -14,6 +14,10 @@
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 350px;
+}
+
+.carousel .item-big {
+  height: 500px;
   background-color: #777;
 }
 .carousel-inner > .item > img {
