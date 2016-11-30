@@ -276,6 +276,8 @@
     <Content Include="Img\intro-bg.png" />
     <Content Include="Img\logo.png" />
     <Content Include="Img\mastercard.png" />
+    <Content Include="Img\News\imgp3301.jpg" />
+    <Content Include="Img\News\mayor___ukti.jpg" />
     <Content Include="Img\outro-emv.png" />
     <Content Include="Img\outro-export-champion.png" />
     <Content Include="Img\outro-ioe.jpg" />

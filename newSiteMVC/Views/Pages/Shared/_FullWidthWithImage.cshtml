@@ -3,14 +3,73 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>@Html.Raw(HttpUtility.HtmlDecode(Model.Title))</h3>                     
-            <hr>
+            <h3 style="color: @Model.TitleColour">@Html.Raw(HttpUtility.HtmlDecode(Model.Title))</h3>                     
+            <p style="color:@Model.MainTextColour">@Html.Raw(HttpUtility.HtmlDecode(Model.MainText))</p>
+            <hr>           
             <a href="">
-                <img class="img-responsive img-hover" src="/Img/News/@Model.ImageUrl" alt="img">
+                <img class="img-responsive img-hover" src="/Img/@Model.ImageUrl" alt="img">
             </a>
-            <hr>
-            <p>@Html.Raw(HttpUtility.HtmlDecode(Model.MainText))</p>
             <hr>
         </div>
     </div>
+    
+    @if (Model.PageId != "AboutUs" && Model.PageId != "InTheNews")
+    {
+        <div class="row" style="margin-top: -70px">
+            <div class="col-lg-12">
+                <h3 class="page-header">Other Products</h3>
+            </div>
+
+            @if (Model.PageId != "DeviceTesting")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="#">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/device-testing.jpg" alt="">
+                    </a>
+                </div>
+            }
+            @if (Model.PageId != "VantivViable")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="#">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/vantiv.jpg" alt="">
+                    </a>
+                </div>
+            }
+            @if (Model.PageId != "HostSimulation")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="#">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/host-simulation.png" alt="">
+                    </a>
+                </div>
+            }
+            @if (Model.PageId != "TrainingCards")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="#">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/training-cards.jpg" alt="">
+                    </a>
+                </div>
+            }
+            @if (Model.PageId != "DeveloperTool")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="#">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/script-tools.png" alt="">
+                    </a>
+                </div>
+            }
+            @if (Model.PageId != "CardTesting")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="#">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/card-testing.jpg" alt="">
+                    </a>
+                </div>
+            }
+                     
+        </div>
+    }
+    
 </div>

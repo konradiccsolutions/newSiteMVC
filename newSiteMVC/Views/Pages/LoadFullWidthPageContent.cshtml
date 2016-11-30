@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
-    ViewBag.Title = @Request.QueryString["pageId"];
+    ViewBag.Title = Request.RawUrl;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*<%--------------------- Top Banner with moving image ---------------------%>*@
 
+@Html.Partial("~/Views/Pages/Shared/_PageTopBanner.cshtml", Model)
 
 @*<%--------------------- Main page content ---------------------%>*@
 

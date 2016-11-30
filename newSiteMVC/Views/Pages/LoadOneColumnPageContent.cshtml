@@ -1,7 +1,7 @@
 ﻿@using Microsoft.Ajax.Utilities
 @model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
-    ViewBag.Title = "LoadOneColumnPageContent";
+    ViewBag.Title = Request.RawUrl;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -30,22 +30,33 @@
     @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", Model)
 
 }
-      
+
+@if (@Request.RawUrl == "/Page/AboutUs")
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.First(it => it.TypeId != "TopBanner"))
+
+}
+
 @if (@Request.RawUrl == "/Page/ContactUs")
 {
     @Html.Partial("~/Views/Pages/Shared/_FullWidthContactPage.cshtml", Model)
 
 }
-            
-@if (@Request.RawUrl == "/Page/TrainingCards")
-            {
-    @Html.Partial("~/Views/Pages/Shared/_TwoColumnComponent.cshtml", Model)
+@{
+    string[] listOfPages = new string[] {"DeviceTesting", "VantivViable", "HostSimulation", "TrainingCards", "DeveloperTool", "CardTesting"};
 
+    foreach (var item in listOfPages)
+    {
+        if (@Request.RawUrl == "/Page/" + item)
+        {
+            @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.First(it => it.TypeId != "TopBanner"))
+        }
+    }
 }
 
-@*<%--------------------- Moving Background Image ---------------------%>*@
+@*<%--------------------- Moving Background Image ---------------------%>**@
 
-@Html.Partial("_MovingBackgroundImage")
+    @Html.Partial("_MovingBackgroundImage");
 
 
 
