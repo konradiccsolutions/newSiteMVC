@@ -33,7 +33,7 @@
 
 @if (@Request.RawUrl == "/Page/AboutUs")
 {
-    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.First(it => it.TypeId != "TopBanner"))
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
 
 }
 
@@ -49,17 +49,11 @@
     {
         if (@Request.RawUrl == "/Page/" + item)
         {
-            @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.First(it => it.TypeId != "TopBanner"))
+            @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
         }
     }
 }
 
 @*<%--------------------- Moving Background Image ---------------------%>**@
 
-    @Html.Partial("_MovingBackgroundImage");
-
-
-
-
-
-
+    @Html.Partial("_MovingBackgroundImage")

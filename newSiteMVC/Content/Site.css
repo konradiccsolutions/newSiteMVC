@@ -448,3 +448,12 @@ img.scale {
         border-top:0 none;
     }
 }
+
+.input-lg-width-100 {
+    max-width: 1000px !important;
+    width: 100%;
+}
+.input-lg-width-80 {
+    max-width: 800px !important;
+    width: 100%;
+}
