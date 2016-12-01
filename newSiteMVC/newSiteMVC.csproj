@@ -1400,6 +1400,10 @@
     <Content Include="Views\Pages\LoadFullWidthPageContent.cshtml" />
     <Content Include="Views\Pages\Shared\_OneColumnWithLinkComponent.cshtml" />
     <Content Include="Views\Pages\Shared\_FullWidthContactPage.cshtml" />
+    <Content Include="Views\Admin\Shared\_FormTopBanner.cshtml" />
+    <Content Include="Views\Admin\Shared\_FormFullContent.cshtml" />
+    <Content Include="Views\Admin\Shared\_FormVideoPod.cshtml" />
+    <Content Include="Views\Admin\Shared\_FormNewsFeed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

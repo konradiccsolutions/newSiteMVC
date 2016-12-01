@@ -12,7 +12,7 @@
 
 @foreach (var item in Model.Where(it => it.TypeId != "TopBanner" && it.PageId != "ContactUs"))
 {
-    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", item)
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
 }
 
 @*<%--------------------- Moving Background Image ---------------------%>*@

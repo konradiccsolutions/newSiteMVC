@@ -1,6 +1,4 @@
 ﻿@model newSiteMVC.Models.tbl_UserControl
-
-
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";}
@@ -24,105 +22,25 @@
                         <div class="form-horizontal">
                          
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
-                                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Subtitle, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Subtitle, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
-                                    @Html.ValidationMessageFor(model => model.Subtitle, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.MainText, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.MainText, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
-                                    @Html.ValidationMessageFor(model => model.MainText, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.ButtonText, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.ButtonText, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
-                                    @Html.ValidationMessageFor(model => model.ButtonText, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
-                                    @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
-                                    <input type="file" accept="jpg;png" id="fileInput" name="fileInput"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.UrlLink, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.UrlLink, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
-                                    @Html.ValidationMessageFor(model => model.UrlLink, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Active, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    <div class="dropdown">
-                                        @Html.EditorFor(model => model.Active)
-                                        @Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BackgroundColour, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.EditorFor(model => model.BackgroundColour, new { htmlAttributes = new { @class = "input-lg input-lg-width-80" } })
-                                    @Html.ValidationMessageFor(model => model.BackgroundColour, "", new { @class = "text-danger" })
-                                    <input type="text" class="" name="cpBackgroundColour" id="cpBackgroundColour" style="display: none;" onchange="check(1)">
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.ButtonColour, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.EditorFor(model => model.ButtonColour, new { htmlAttributes = new { @class = "input-lg input-lg-width-80" } })
-                                    @Html.ValidationMessageFor(model => model.ButtonColour, "", new { @class = "text-danger" })
-                                    <input type="text" class="" name="cpButtonColourr" id="cpButtonColour" style="display: none;" onchange="check(2)">
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.ButtonTextColour, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.EditorFor(model => model.ButtonTextColour, new { htmlAttributes = new { @class = "input-lg input-lg-width-80" } })
-                                    @Html.ValidationMessageFor(model => model.ButtonTextColour, "", new { @class = "text-danger" })
-                                    <input type="text" class="" name="cpButtonTextColour" id="cpButtonTextColour" style="display: none;" onchange="check(3)">
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.TitleColour, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.EditorFor(model => model.TitleColour, new { htmlAttributes = new { @class = "input-lg input-lg-width-80" } })
-                                    @Html.ValidationMessageFor(model => model.TitleColour, "", new { @class = "text-danger" })
-                                    <input type="text" class="" name="cpTitleColour" id="cpTitleColour" style="display: none;" onchange="check(4)">
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.MainTextColour, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.EditorFor(model => model.MainTextColour, new { htmlAttributes = new { @class = "input-lg input-lg-width-80" } })
-                                    @Html.ValidationMessageFor(model => model.MainTextColour, "", new { @class = "text-danger" })
-                                    <input type="text" class="" name="cpMainTextColour" id="cpMainTextColour" style="display: none;" onchange="check(5)">
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-offset-3" style="margin-left:100px; margin-top:-50px">
-                                <input type="submit" value="Save" class="btn btn-default btn-danger" style="margin-bottom:30px" />
+                            @switch (Model.TypeId)
+                            {
+                                case "TopBanner":
+                                    @Html.Partial("/Views/Admin/Shared/_FormTopBanner.cshtml", Model)
+                                    break;
+                                case "VideoPod":
+                                    @Html.Partial("/Views/Admin/Shared/_FormVideoPod.cshtml", Model)
+                                    break;
+                                case "NewsFeed":
+                                    @Html.Partial("/Views/Admin/Shared/_FormNewsFeed.cshtml", Model)
+                                    break;
+                                default:
+                                    @Html.Partial("/Views/Admin/Shared/_FormFullContent.cshtml", Model)
+                                    break;
+                            }
+                            <br/>
+                            <div class="col-md-offset-5" style="margin-left:100px; margin-top:-50px">
+                                <input type="submit" value="Save" class="btn btn-lg btn-danger" style="margin-bottom:30px" />
                                 <div>
                                     @Html.ActionLink("Back to List", "Index")
                                 </div>
@@ -130,36 +48,36 @@
                         </div>                        
                     }
 
-                    <script type="text/javascript">
-
-                        $("#fileInput").change(function () {
-                            var filename = document.getElementById("fileInput").files[0].name;
-                            $("#ImageUrl").val(filename);
-                        });
+            <script type="text/javascript">
+ 
+                $("#fileInput").change(function () {
+                    var filename = document.getElementById("fileInput").files[0].name;
+                    $("#ImageUrl").val(filename);
+                });
 
                        
-                        function check(num) {
-                            switch (num)
-                            {                               
-                                case 1:
-                                    document.getElementById('BackgroundColour').value = document.getElementById('cpBackgroundColour').value;
-                                    break;
-                                case 2 :
-                                    document.getElementById('ButtonColour').value = document.getElementById('cpButtonColour').value;
-                                    break;
-                                case 3 :
-                                    document.getElementById('ButtonTextColour').value = document.getElementById('cpButtonTextColour').value;
-                                    break;
-                                case 4 :
-                                    document.getElementById('TitleColour').value = document.getElementById('cpTitleColour').value;
-                                    break;
-                                case 5 :
-                                    document.getElementById('MainTextColour').value = document.getElementById('cpMainTextColour').value;                                  
-                            }
+                function check(num) {
+                    switch (num)
+                    {                               
+                    case 1:
+                        document.getElementById('BackgroundColour').value = document.getElementById('cpBackgroundColour').value;
+                        break;
+                    case 2 :
+                        document.getElementById('ButtonColour').value = document.getElementById('cpButtonColour').value;
+                        break;
+                    case 3 :
+                        document.getElementById('ButtonTextColour').value = document.getElementById('cpButtonTextColour').value;
+                        break;
+                    case 4 :
+                        document.getElementById('TitleColour').value = document.getElementById('cpTitleColour').value;
+                        break;
+                    case 5 :
+                        document.getElementById('MainTextColour').value = document.getElementById('cpMainTextColour').value;                                  
+                    }
                             
-                        }
+                }
 
-                    </script>
+            </script>
 
                 </div>
       
@@ -168,7 +86,7 @@
             </div>  
 
     <div>
-        @Html.ActionLink("Back to List", "Index")
+ 
     </div>
 
    @section Scripts {
@@ -176,60 +94,60 @@
     @Scripts.Render("~/bundles/jqueryspectrum")
 
     <script type="text/javascript">
-                    $("#cpBackgroundColour").spectrum({
-                        preferredFormat: "hex",
-                        color: "#f00",
-                        showInput: true,
-                        allowEmpty: true,
-                        showPalette: true,
-                        showSelectionPalette: true,
-                        palette: [],
-                        localStorageKey: "spectrum.homepage"
-                    });
+        $("#cpBackgroundColour").spectrum({
+            preferredFormat: "hex",
+            color: "#f00",
+            showInput: true,
+            allowEmpty: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            palette: [],
+            localStorageKey: "spectrum.homepage"
+        });
 
-                    $("#cpButtonColour").spectrum({
-                        preferredFormat: "hex",
-                        color: "#f00",
-                        showInput: true,
-                        allowEmpty: true,
-                        showPalette: true,
-                        showSelectionPalette: true,
-                        palette: [],
-                        localStorageKey: "spectrum.homepage"
-                    });
+        $("#cpButtonColour").spectrum({
+            preferredFormat: "hex",
+            color: "#f00",
+            showInput: true,
+            allowEmpty: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            palette: [],
+            localStorageKey: "spectrum.homepage"
+        });
 
-                    $("#cpButtonTextColour").spectrum({
-                        preferredFormat: "hex",
-                        color: "#f00",
-                        showInput: true,
-                        allowEmpty: true,
-                        showPalette: true,
-                        showSelectionPalette: true,
-                        palette: [],
-                        localStorageKey: "spectrum.homepage"
-                    });
+        $("#cpButtonTextColour").spectrum({
+            preferredFormat: "hex",
+            color: "#f00",
+            showInput: true,
+            allowEmpty: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            palette: [],
+            localStorageKey: "spectrum.homepage"
+        });
 
-                    $("#cpTitleColour").spectrum({
-                        preferredFormat: "hex",
-                        color: "#f00",
-                        showInput: true,
-                        allowEmpty: true,
-                        showPalette: true,
-                        showSelectionPalette: true,
-                        palette: [],
-                        localStorageKey: "spectrum.homepage"
-                    });
+        $("#cpTitleColour").spectrum({
+            preferredFormat: "hex",
+            color: "#f00",
+            showInput: true,
+            allowEmpty: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            palette: [],
+            localStorageKey: "spectrum.homepage"
+        });
 
-                    $("#cpMainTextColour").spectrum({
-                        preferredFormat: "hex",
-                        color: "#f00",
-                        showInput: true,
-                        allowEmpty: true,
-                        showPalette: true,
-                        showSelectionPalette: true,
-                        palette: [],
-                        localStorageKey: "spectrum.homepage"
-                    });
+        $("#cpMainTextColour").spectrum({
+            preferredFormat: "hex",
+            color: "#f00",
+            showInput: true,
+            allowEmpty: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            palette: [],
+            localStorageKey: "spectrum.homepage"
+        });
 
     </script>
        }

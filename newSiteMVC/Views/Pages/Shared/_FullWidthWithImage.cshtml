@@ -1,8 +1,18 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 
 @{
-    var twoColumnObject = Model.First(it => it.TypeId == "TwoColumn");
-    var videoPodObject = Model.First(it => it.TypeId == "VideoPod");
+    var twoColumnObject = Model.First(it => it.TypeId == "TwoColumn" || it.TypeId =="NewsFeed");
+    var videoPodObject = Model.First();
+
+    foreach (var item in Model)
+    {
+        if (item.TypeId == "VideoPod")
+        {
+            videoPodObject = Model.First(it => it.TypeId == "VideoPod");
+        }
+    }
+
+
 }
 <div class="container">
     <div class="row">
