@@ -1,0 +1,37 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.Partial("~/Views/Home/Shared/_PopUpBanner.cshtml", Model)
+
+<div id="intro" style="padding-top:40px">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="intro-text">
+                        <img src="/Img/logo.png" style="box-shadow: 0px 0px 0px 6px; height: 300px; /*width: 90%;*/"/>      
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<%--------------------- Carousel ---------------------%>*@
+
+@Html.Partial("~/Views/Home/Shared/_HomePageCarousel.cshtml", Model)
+
+@*<%--------------------- Moving Image Background ---------------------%>*@
+
+@Html.Partial("_MovingBackgroundImage")
+
+@*<%--------------------- Imagepod section ---------------------%>*@
+
+@Html.Partial("~/Views/Home/Shared/_OurProductsSection.cshtml", Model)
+
+@*<%--------------------- About ICC section ---------------------%>*@
+
+@Html.Partial("~/Views/Home/Shared/_AboutUsSection.cshtml", Model)
+

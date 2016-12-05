@@ -1,0 +1,59 @@
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = Request.RawUrl;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<%--------------------- Top Banner with moving image ---------------------%>*@
+
+@Html.Partial("~/Views/Pages/Shared/_PageTopBanner.cshtml", Model)
+
+@*<%--------------------- Main page content ---------------------%>*@
+
+@foreach (var item in Model.Where(it => it.TypeId != "NewsFeed"))
+{
+    if ( item.TypeId != "TopBanner" && item.TypeId != "TwoColumn" && item.TypeId != "VideoPod")
+    {
+        if (string.IsNullOrEmpty(item.ImageUrl))
+        {
+            @Html.Partial("~/Views/Pages/Shared/_OneColumnComponent.cshtml", item)
+        }
+        else
+        {
+            @Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", item)
+        }
+    }
+}
+@if (@Request.RawUrl == "/Page/InTheNews")
+{
+    @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", Model)
+
+}
+
+@if (@Request.RawUrl == "/Page/AboutUs")
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
+
+}
+
+@if (@Request.RawUrl == "/Page/ContactUs")
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthContactPage.cshtml", Model)
+
+}
+@{
+    string[] listOfPages = new string[] {"DeviceTesting", "VantivViable", "HostSimulation", "TrainingCards", "DeveloperTool", "CardTesting"};
+
+    foreach (var item in listOfPages)
+    {
+        if (@Request.RawUrl == "/Page/" + item)
+        {
+            @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
+        }
+    }
+}
+
+@*<%--------------------- Moving Background Image ---------------------%>**@
+
+    @Html.Partial("_MovingBackgroundImage")

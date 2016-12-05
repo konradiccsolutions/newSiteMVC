@@ -1,0 +1,103 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+
+@{
+    var twoColumnObject = Model.First(it => it.TypeId == "TwoColumn" || it.TypeId =="NewsFeed");
+    var videoPodObject = Model.First();
+
+    foreach (var item in Model)
+    {
+        if (item.TypeId == "VideoPod")
+        {
+            videoPodObject = Model.First(it => it.TypeId == "VideoPod");
+        }
+    }
+
+
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="color: @twoColumnObject.TitleColour">@Html.Raw(HttpUtility.HtmlDecode(twoColumnObject.Title))</h3>                     
+            <p style="color:@twoColumnObject.MainTextColour">@Html.Raw(HttpUtility.HtmlDecode(twoColumnObject.MainText))</p>
+            <hr>
+            
+            @if (String.IsNullOrEmpty(videoPodObject.UrlLink))
+            {
+                if (!string.IsNullOrEmpty(twoColumnObject.ImageUrl))
+                {
+                    <img class="img-responsive img-hover" src="@twoColumnObject.ImageUrl" alt="img">
+                }
+
+            }
+            else
+            {
+                <div class="col-md-12" style="margin-bottom: 20px">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="@videoPodObject.UrlLink" frameborder="1" allowfullscreen></iframe>
+                    </div>
+                </div>
+            }
+            <hr>
+        </div>
+    </div>
+    
+    @if (twoColumnObject.PageId != "AboutUs" && twoColumnObject.PageId != "InTheNews")
+    {
+        <div class="row" style="margin-top: -70px">
+            <div class="col-lg-12">
+                <h3 class="page-header">Other Products</h3>
+            </div>
+
+            @if (twoColumnObject.PageId != "DeviceTesting")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="/Page/DeviceTesting">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/device-testing.jpg" alt="">
+                    </a>
+                </div>
+            }
+            @if (twoColumnObject.PageId != "VantivViable")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="/Page/VantivViable">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/vantiv.jpg" alt="">
+                    </a>
+                </div>
+            }
+            @if (twoColumnObject.PageId != "HostSimulation")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="/Page/HostSimulation">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/host-simulation.png" alt="">
+                    </a>
+                </div>
+            }
+            @if (twoColumnObject.PageId != "TrainingCards")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="/Page/TrainingCards">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/training-cards.jpg" alt="">
+                    </a>
+                </div>
+            }
+            @if (twoColumnObject.PageId != "DeveloperTool")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="/Page/DeveloperTool">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/script-tools.png" alt="">
+                    </a>
+                </div>
+            }
+            @if (twoColumnObject.PageId != "CardTesting")
+            {
+                <div class="col-sm-2 col-xs-6">
+                    <a href="/Page/CardTesting">
+                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/card-testing.jpg" alt="">
+                    </a>
+                </div>
+            }
+                     
+        </div>
+    }
+    
+</div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+
+@{
+    ViewBag.Title = "Admin Panel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*<-----------------Load components for a selected page----------------->*@
+
+@{
+    var listOfTypes = new List<string>();
+
+    foreach (var item in Model)
+    {
+        if (!listOfTypes.Contains(item.TypeId))
+        {
+            listOfTypes.Add(item.TypeId);
+        }
+
+    }
+
+}
+
+<div class="container body-content">
+    <div class="row" style="margin-top:100px">
+        <div class="col-md-3" style="margin-top: -25px;">
+            @Html.Partial("~/Views/Admin/Shared/_AdminNavBar.cshtml")
+
+        </div>
+        <div class="col-md-9" style="margin-top: -25px;">
+            
+          
+            <br/>
+
+            <h1>Update @Model.FirstOrDefault().PageId Page</h1>
+
+            @foreach (var type in listOfTypes)
+            {
+                if (type != "TopBanner")
+                {
+                    var newModel = Model.Where(it => it.TypeId == type);
+                    <br/>
+                    <div style="border-bottom: 2px dotted black; padding-bottom: 20px">
+                        <h2>@type</h2>
+                        <br/>
+                        @Html.Partial("~/Views/Admin/Shared/_ControlButtons.cshtml", newModel)
+                        <br/>
+                        @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel)
+                    </div>
+                }
+                else
+                {
+                    <br/>
+                    <h2>@type</h2>
+                    <br/>
+                    var newModel = Model.Where(it => it.TypeId == type);
+                    @Html.Partial("~/Views/Admin/Shared/_TopBanner.cshtml", newModel)
+
+                }
+            }
+        </div>
+    </div>
+    </div>
+

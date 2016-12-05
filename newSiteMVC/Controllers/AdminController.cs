@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -224,6 +226,33 @@ namespace newSiteMVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        public ActionResult Upload(IEnumerable<HttpPostedFileBase> file, string returnurl)
+        {
+            try
+            {
+                var path = string.Empty;
+                var fileName = string.Empty;
+
+                foreach (var item in file)         
+                if (item.ContentLength > 0)
+                {
+                    fileName = Path.GetFileName(item.FileName);
+                    path = Path.Combine(Server.MapPath("~/Img/"), fileName);
+                        item.SaveAs(path);
+                }
+                ViewBag.Message = "Upload successful";
+                returnurl = returnurl + "&ImageUrl=/Img/" + fileName;
+                Response.Write("<script>alert('Hello');</script>");
+                return Redirect(returnurl);
+            }
+            catch
+            {
+                ViewBag.Message = "Upload failed";
+                return Redirect(returnurl);
+            }
         }
 
     }

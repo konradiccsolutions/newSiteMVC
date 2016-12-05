@@ -1,0 +1,102 @@
+
+#intro {
+	display: table;
+	width: 100%;
+	height: auto;
+	padding: 100px 0;
+	text-align: center;
+	color: #fff;
+	background: url(../Img/intro-bg.jpg) no-repeat center center fixed;
+	background-color: #000;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+#intro .intro-body {
+	display: table-cell;
+	vertical-align: middle;
+}
+#intro .intro-body H1 {
+	font-size: 76px;
+	font-weight: 700;
+	color: rgba(255,255,255,0.8);
+	text-transform: uppercase;
+}
+#intro .intro-body .brand-heading {
+	color: #E75926;
+	text-shadow: 0 4px #a13e1a;
+}
+#intro .intro-body .intro-text {
+	font-size: 18px;
+}
+
+@media(min-width:768px) {
+#intro {
+	height: 100%;
+	padding: 0;
+}
+#intro .intro-body .intro-text {
+	font-size: 18px;
+	letter-spacing: 1px;
+	margin-bottom: 0px;
+	color: rgba(255,255,255,0.9);
+}
+}
+
+@media (max-width: 640px) {
+#intro .intro-body H1 {
+	font-size: 5em;
+}
+}
+
+#intro2 {
+	display: table;
+	width: 100%;
+	height: auto;
+	padding: 100px 0;
+	text-align: center;
+	color: #fff;
+	background: url(../Img/biglogo.png) no-repeat center center fixed;
+	background-color: #000;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+#intro2 .intro-body {
+	display: table-cell;
+	vertical-align: middle;
+}
+#intro2 .intro-body H1 {
+	font-size: 76px;
+	font-weight: 700;
+	color: rgba(255,255,255,0.8);
+	text-transform: uppercase;
+}
+#intro2 .intro-body .brand-heading {
+	color: #E75926;
+	text-shadow: 0 4px #a13e1a;
+}
+#intro2 .intro-body .intro-text {
+	font-size: 18px;
+}
+
+@media(min-width:768px) {
+#intro2 {
+	height: 100%;
+	padding: 0;
+}
+#intro2 .intro-body .intro-text {
+	font-size: 18px;
+	letter-spacing: 1px;
+	margin-bottom: 100px;
+	color: rgba(255,255,255,0.9);
+}
+}
+
+@media (max-width: 640px) {
+#intro2 .intro-body H1 {
+	font-size: 5em;
+}
+}

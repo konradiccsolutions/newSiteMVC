@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ICCSolutionsMVCWebsite" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\stoczynskik\\Documents\\newSiteMVC\\newSiteMVC\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\stoczynskik\\Documents\\newSiteMVC\\newSiteMVC\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="StoreDB-Web.config Connection String" description="" value="data source=icc-core.database.windows.net;Initial Catalog=MVCWebsiteDevDB;User ID=wizard;Password=iccsol2016!" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\stoczynskik\\Documents\\newSiteMVC\\newSiteMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='StoreDB']/@connectionString" />
+  </parameter>
+</parameters>

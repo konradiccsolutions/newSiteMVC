@@ -1,0 +1,26 @@
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+@{
+    ViewBag.Title = Request.RawUrl;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<%--------------------- Top Banner with moving image ---------------------%>*@
+
+@Html.Partial("~/Views/Pages/Shared/_PageTopBanner.cshtml", Model)
+
+@*<%--------------------- Main page content ---------------------%>*@
+
+@foreach (var item in Model.Where(it => it.TypeId != "TopBanner" && it.PageId != "ContactUs"))
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
+}
+
+@*<%--------------------- Moving Background Image ---------------------%>*@
+
+@Html.Partial("_MovingBackgroundImage")
+
+
+
+
+
+
