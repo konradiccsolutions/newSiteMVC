@@ -237,6 +237,7 @@
     </Compile>
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UpdateSectionModel.cs" />
@@ -358,6 +359,7 @@
     <Content Include="Img\china.png" />
     <Content Include="Img\device-testing.jpg" />
     <Content Include="Img\e.png" />
+    <Content Include="Img\host-simulation.png" />
     <Content Include="Img\iccbanner.jpg" />
     <Content Include="Img\intro-bg.jpg" />
     <Content Include="Img\intro-bg.png" />
@@ -371,9 +373,13 @@
     <Content Include="Img\outro-mag.png" />
     <Content Include="Img\outro-mastercard-vendor-program.png" />
     <Content Include="Img\script-tools.png" />
+    <Content Include="Img\SocialIcons\facebook-logo-blue.png" />
     <Content Include="Img\SocialIcons\facebook-logo.png" />
+    <Content Include="Img\SocialIcons\linkedin-logo-blue.png" />
     <Content Include="Img\SocialIcons\linkedin-logo.png" />
+    <Content Include="Img\SocialIcons\twitter-logo-blue.png" />
     <Content Include="Img\SocialIcons\twitter-logo.png" />
+    <Content Include="Img\SocialIcons\vimeo-square-logo-blue.png" />
     <Content Include="Img\SocialIcons\vimeo-square-logo.png" />
     <Content Include="Img\training-cards.jpg" />
     <Content Include="Img\usacard1.jpg" />

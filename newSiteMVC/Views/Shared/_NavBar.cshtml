@@ -104,17 +104,17 @@
                             <li style="margin-top: -40px;">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form class="form-horizontal" role="form" method="post" action="index.php">
+                                        <form class="form-horizontal" role="form" method="post"  action="@Url.Action("ContactFormSendEmail", "Pages")">
                                             <div class="form-group">
                                                 <label for="name" class="col-sm-3 control-label">First Name</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="name" name="name" placeholder="First Name" value="">
+                                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="name" class="col-sm-3 control-label">Last Name</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="name" name="name" placeholder="Last Name" value="">
+                                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -126,7 +126,7 @@
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-3 control-label">Telephone</label>
                                                 <div class="col-sm-7">
-                                                    <input type="email" class="form-control" id="email" name="email" placeholder="01234567890" value="">
+                                                    <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="01234567890" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -151,7 +151,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    @*<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span><span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu" style="min-width: 223px;max-height: 43px;padding-top: 0px;">
                             <li style="margin-top: -66px;margin-left: -30px;">
@@ -171,7 +171,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </li>
+                    </li>*@
                     @if (HttpContext.Current.User.Identity.IsAuthenticated)
                     {
                         <li class="dropdown">

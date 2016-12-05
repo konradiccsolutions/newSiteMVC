@@ -20,16 +20,14 @@
 
 }
 
-<div class="container body-content">
-    <div class="row" style="margin-top:100px">
-        <div class="col-md-3" style="margin-top: -25px;">
-            @Html.Partial("~/Views/Admin/Shared/_AdminNavBar.cshtml")
 
+<div class="container body-content">
+    
+    <div class="row" style="margin-top: 200px">
+        <div class="col-md-3" style="margin-top: 0px;">
+            @Html.Partial("~/Views/Admin/Shared/_AdminNavBar.cshtml")
         </div>
-        <div class="col-md-9" style="margin-top: -25px;">
-            
-          
-            <br/>
+        <div class="col-md-9" style="margin-top: -15px;">
 
             <h1>Update @Model.FirstOrDefault().PageId Page</h1>
 
@@ -59,5 +57,5 @@
             }
         </div>
     </div>
-    </div>
+</div>
 

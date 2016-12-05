@@ -25,7 +25,6 @@ namespace newSiteMVC.Models
         [DataType(DataType.MultilineText)]
         public string MainText { get; set; }
 
-        [StringLength(20)]
         public string ButtonText { get; set; }
 
         public string ImageUrl { get; set; }
