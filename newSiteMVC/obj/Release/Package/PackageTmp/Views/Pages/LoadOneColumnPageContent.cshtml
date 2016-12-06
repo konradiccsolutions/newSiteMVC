@@ -56,4 +56,14 @@
 
 @*<%--------------------- Moving Background Image ---------------------%>**@
 
- 
+@foreach (var item in Model.Where(item => item.TypeId == "TopBanner"))
+{
+    <div id="intro" style="background-image: url(@item.ImageUrl)">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+}
