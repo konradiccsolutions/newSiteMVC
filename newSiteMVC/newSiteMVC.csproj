@@ -337,6 +337,25 @@
     <Content Include="bin\System.Web.WebPages.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="ClientLogin\access-denied.php" />
+    <Content Include="ClientLogin\auth.php" />
+    <Content Include="ClientLogin\clientlogin.html" />
+    <Content Include="ClientLogin\clientlogin.php" />
+    <Content Include="ClientLogin\cliprods.php" />
+    <Content Include="ClientLogin\config.php" />
+    <Content Include="ClientLogin\dev.html" />
+    <Content Include="ClientLogin\downloads.html" />
+    <Content Include="ClientLogin\expired.php" />
+    <Content Include="ClientLogin\home.html" />
+    <Content Include="ClientLogin\host.html" />
+    <Content Include="ClientLogin\ICC_logo_480_for_print.jpg" />
+    <Content Include="ClientLogin\index.php" />
+    <Content Include="ClientLogin\login-exec.php" />
+    <Content Include="ClientLogin\pingForUpdates.php" />
+    <Content Include="ClientLogin\sendLicRequest.php" />
+    <Content Include="ClientLogin\sitemap.xml" />
+    <Content Include="ClientLogin\UARequest.htm" />
+    <Content Include="ClientLogin\_clientlogin.html" />
     <Content Include="Content\bootstrap-colorpicker-plus.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1400,6 +1419,7 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="ClientLogin\error_log" />
     <None Include="Properties\PublishProfiles\ICCSolutionsMVCWebsite - Web Deploy.pubxml" />
     <None Include="richtexteditor\core\jsml.xsd">
       <SubType>Designer</SubType>

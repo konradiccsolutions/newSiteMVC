@@ -11,6 +11,9 @@ namespace newSiteMVC
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.IgnoreRoute("{file}.html");
+            routes.IgnoreRoute("{file}.php");
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
