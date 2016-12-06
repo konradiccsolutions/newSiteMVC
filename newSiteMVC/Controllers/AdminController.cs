@@ -229,29 +229,45 @@ namespace newSiteMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Upload(IEnumerable<HttpPostedFileBase> file, string returnurl)
-        {
+        public ActionResult Upload(IEnumerable<HttpPostedFileBase> file, string returnurl, string fileType)
+        {         
             try
             {
                 var path = string.Empty;
                 var fileName = string.Empty;
 
-                foreach (var item in file)         
-                if (item.ContentLength > 0)
+                if (fileType == "image")
                 {
-                    fileName = Path.GetFileName(item.FileName);
-                    path = Path.Combine(Server.MapPath("~/Img/"), fileName);
-                        item.SaveAs(path);
+                    foreach (var item in file)
+                        if (item.ContentLength > 0)
+                        {
+                            fileName = Path.GetFileName(item.FileName);
+                            path = Path.Combine(Server.MapPath("~/Img/"), fileName);
+                            item.SaveAs(path);
+                        }
+                    ViewBag.Message = "Upload successful";
+                    returnurl = returnurl + "&Upload=success&ImageUrl=/Img/" + fileName;
+                    return Redirect(returnurl);
                 }
-                ViewBag.Message = "Upload successful";
-                returnurl = returnurl + "&ImageUrl=/Img/" + fileName;
-                Response.Write("<script>alert('Hello');</script>");
-                return Redirect(returnurl);
+                else
+                {
+                    foreach (var item in file)
+                        if (item.ContentLength > 0)
+                        {
+                            fileName = Path.GetFileName(item.FileName);
+                            path = Path.Combine(Server.MapPath("~/Files/"), fileName);
+                            item.SaveAs(path);
+                        }
+                    ViewBag.Message = "Upload successful";
+                    returnurl = returnurl + "?Upload=success";
+                    return Redirect(returnurl);
+                }
+                
             }
             catch
             {
                 ViewBag.Message = "Upload failed";
-                return Redirect(returnurl);
+                return Redirect(returnurl + "?Upload=fail");
             }
         }
 

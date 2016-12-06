@@ -30,6 +30,39 @@
         <div class="col-md-9" style="margin-top: -15px;">
 
             <h1>Update @Model.FirstOrDefault().PageId Page</h1>
+            
+            <br/>
+                @using (Html.BeginForm("Upload", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                    @Html.AntiForgeryToken()
+                    <fieldset>
+                        <legend>Upload a file </legend>
+                        <div class="editor-field">
+                            @Html.TextBox("file", "", new { type = "file", @class = "btn-default btn" })
+                        </div>
+                        <br/>
+                        <div class="editor-field">
+                            @Html.Hidden("returnUrl", this.Request.RawUrl)
+                            @Html.Hidden("fileType", "file")
+                            <input type="submit" class="btn btn-info" value="Upload" />
+
+                        </div>
+                    </fieldset>
+                }
+            
+            @if (Request.QueryString["Upload"] == "success")
+            {
+                <div class="alert alert-success">
+                    <strong>Success!</strong> The file can be found under "/Files/filename.extension"
+                </div>
+            }
+            @if (Request.QueryString["Upload"] == "fail")
+            {
+                <div class="alert alert-danger">
+                    <strong>Fail!</strong>
+                </div>
+            }
+           
 
             @foreach (var type in listOfTypes)
             {

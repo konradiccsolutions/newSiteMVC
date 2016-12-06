@@ -27,9 +27,16 @@
 <div class="form-group">
     @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
-        @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
+        @if (!String.IsNullOrEmpty(Request.QueryString["ImageUrl"]))
+        {
+            @Html.EditorFor(model => Request.QueryString["ImageUrl"], new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
+        }
+        else
+        {
+            @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input-lg input-lg-width-100" } })
+
+        }
         @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
-        <input type="file" accept="jpg;png" id="fileInput" name="fileInput" />
     </div>
 </div>
 
