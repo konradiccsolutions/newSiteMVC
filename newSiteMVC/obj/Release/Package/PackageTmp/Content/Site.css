@@ -381,30 +381,38 @@ width: 600px;
 }
 
 .crop-height {
-  /* max-width: 1200px; /* img src width (if known) */
   max-height: 230px;
   overflow: hidden; 
 }
 
 .crop-height-300 {
-  /* max-width: 1200px; /* img src width (if known) */
   min-height: 300px;
   overflow: hidden; 
 }
-
+@media (max-width: 394px) {
 .crop-height-110 {
-  /* max-width: 1200px; /* img src width (if known) */
-  max-height: 110px;
-  overflow: hidden; 
+
+    width: 100% !important;
+    max-height: 95px !important;
+    min-height: 40px !important;
+    overflow: hidden;  
+    margin-bottom: 15px;
+}
+}
+.crop-height-110 {
+    max-height: 110px;
+    min-height: 110px;
+    width: 100%;
+    max-width: 170px;
+    overflow: hidden;  
+    margin-bottom: 15px;
 }
 img.scale {
-  /* corrects inline gap in enclosing div */
+
   display: block;
   max-width: 100%;
-  /* just in case, to force correct aspect ratio */
   height: auto !important;
-  width: auto\9; /* ie8+9 */
-  /* lt ie8 */
+  width: auto\9; 
   -ms-interpolation-mode: bicubic; 
 }
 

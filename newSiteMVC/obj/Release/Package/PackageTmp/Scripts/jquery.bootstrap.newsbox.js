@@ -144,7 +144,7 @@ if (typeof Object.create !== 'function') {
                 if( footer ) {
                     $(footer).append(nav);
                 } else {
-                    $(panel).append('<div class="panel-footer">' + nav + '</div>');
+                    $(panel).append('<div class="panel-footer" style="border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;">' + nav + '</div>');
                 }
 
                 var self = this;
