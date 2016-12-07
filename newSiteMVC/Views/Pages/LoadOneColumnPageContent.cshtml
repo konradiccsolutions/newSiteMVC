@@ -1,5 +1,4 @@
-﻿@using Microsoft.Ajax.Utilities
-@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
     ViewBag.Title = Request.RawUrl;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,15 +24,10 @@
         }
     }
 }
+
 @if (@Request.RawUrl == "/Page/InTheNews")
 {
     @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", Model)
-
-}
-
-@if (@Request.RawUrl == "/Page/AboutUs")
-{
-    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model)
 
 }
 
@@ -43,7 +37,7 @@
 
 }
 @{
-    string[] listOfPages = new string[] {"DeviceTesting", "VantivViable", "HostSimulation", "TrainingCards", "DeveloperTool", "CardTesting"};
+    string[] listOfPages = new string[] {"DeviceTesting", "VantivViable", "HostSimulation", "TrainingCards", "DeveloperTool", "CardTesting", "AboutUs"};
 
     foreach (var item in listOfPages)
     {
@@ -56,14 +50,4 @@
 
 @*<%--------------------- Moving Background Image ---------------------%>**@
 
-@foreach (var item in Model.Where(item => item.TypeId == "TopBanner"))
-{
-    <div id="intro" style="background-image: url(@item.ImageUrl);background-position-y: 0px;">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                </div>
-            </div>
-        </div>
-    </div>
-}
+    @Html.Partial("~/Views/Pages/Shared/_MovingBackgroundImage.cshtml", @Model.First(it => it.TypeId == "TopBanner"))
