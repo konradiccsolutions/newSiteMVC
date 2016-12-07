@@ -17,17 +17,18 @@ namespace newSiteMVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "News",
-               url: "Page/InTheNews/News/{id}",
-               defaults: new { controller = "Pages", action = "LoadFullWidthPageContent", Id = UrlParameter.Optional }
-           );
+              name: "Page",
+              url: "Page/{pageId}",
+              defaults: new { controller = "Pages", action = "LoadOneColumnPageContent", pageId = UrlParameter.Optional, Id = UrlParameter.Optional }
+          );
 
             routes.MapRoute(
-               name: "Page",
-               url: "Page/{pageId}",
+               name: "News",
+               url: "Page/{pageId}/News/{id}",
                defaults: new { controller = "Pages", action = "LoadOneColumnPageContent", pageId = UrlParameter.Optional, Id = UrlParameter.Optional }
            );
-         
+
+           
             routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",

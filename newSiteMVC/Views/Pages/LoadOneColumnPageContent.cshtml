@@ -1,4 +1,5 @@
-﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
+﻿@using System.Text.RegularExpressions
+@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 @{
     ViewBag.Title = Request.RawUrl;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -47,7 +48,16 @@
         }
     }
 }
+@{
+    string path = Request.FilePath;
+    string withoutNumbers = Regex.Replace(Request.FilePath, "[0-9]", "");
+}
+
+@if (withoutNumbers == "/Page/InTheNews/News/")
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.Where(it => it.Id.ToString() == ViewBag.NewsId))
+}
 
 @*<%--------------------- Moving Background Image ---------------------%>**@
 
-    @Html.Partial("~/Views/Pages/Shared/_MovingBackgroundImage.cshtml", @Model.First(it => it.TypeId == "TopBanner"))
+    @*@Html.Partial("~/Views/Pages/Shared/_MovingBackgroundImage.cshtml", @Model.First(it => it.TypeId == "TopBanner"))*@
