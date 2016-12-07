@@ -30,11 +30,13 @@
 	font-size: 18px;
 }
 
-@media(min-width:768px) {
+@media(min-width:1345px) {
 #intro {
 	height: 100%;
 	padding: 0;
+    background-position-y: -360px;
 }
+
 #intro .intro-body .intro-text {
 	font-size: 18px;
 	letter-spacing: 1px;
@@ -46,6 +48,14 @@
 @media (max-width: 640px) {
 #intro .intro-body H1 {
 	font-size: 5em;
+}
+}
+
+@media (min-width: 640px) {
+#intro .intro-body H1 {
+	height: 100%;
+	padding: 0;
+    background-position-y: 0px;
 }
 }
 

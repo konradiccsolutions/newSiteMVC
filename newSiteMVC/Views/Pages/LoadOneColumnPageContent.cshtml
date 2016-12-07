@@ -58,7 +58,7 @@
 
 @foreach (var item in Model.Where(item => item.TypeId == "TopBanner"))
 {
-    <div id="intro" style="background-image: url(@item.ImageUrl)">
+    <div id="intro" style="background-image: url(@item.ImageUrl);background-position-y: 0px;">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
