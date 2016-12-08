@@ -63,115 +63,12 @@
                     </li>
                     <li class="dropdown" style="margin-left:60px">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Client Area <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu" style="min-width: 390px; padding-top:10px">
-                            <li style="margin-top: -40px;">
-                                <div class="row">
-                                    <div class="col-md-12">
-
-                                        <div class="social-buttons">
-                                            <p>ICC Solutions provides a download service for delivering product updates to its registered customers.</p>
-                                            <p>Please enter your Client ID and Password to access product download area.</p>
-                                        </div>
-                                        <br/>
-                                        <form id="loginForm" name="loginForm" method="post" action="">
-                                            <div class="form-group col-lg-offset-1">
-                                                <label class="sr-only" for="Username">Username</label>
-                                                <input type="text" class="form-control" id="Username" placeholder="Username" required>
-                                            </div>
-                                            <div class="form-group col-lg-offset-1">
-                                                <label class="sr-only" for="Password">Password</label>
-                                                <input type="password" class="form-control" id="Password" placeholder="Password" required>
-                                            </div>
-                                            <br />
-                                            <div class="form-group">
-                                                <div class="col-sm-9 col-sm-offset-1">
-                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <br/> <br/>
-                                    <div class="bottom text-center">
-                                        Forgotten your login details?  Contact support <a href="/Page/ICCSupport"><b>here</b></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                       @Html.Partial("_NavBarClientAreaLogin")
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-envelope"></span><span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu" style="min-width: 490px;padding-top: 10px;left: -136px; max-height: 390px;">
-                            <li style="margin-top: -40px;">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form class="form-horizontal" role="form" method="post"  action="@Url.Action("ContactFormSendEmail", "Pages")">
-                                            <div class="form-group">
-                                                <label for="name" class="col-sm-3 control-label">First Name</label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="name" class="col-sm-3 control-label">Last Name</label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="email" class="col-sm-3 control-label">Email</label>
-                                                <div class="col-sm-7">
-                                                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="email" class="col-sm-3 control-label">Telephone</label>
-                                                <div class="col-sm-7">
-                                                    <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="01234567890" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message" class="col-sm-3 control-label">Message</label>
-                                                <div class="col-sm-7">
-                                                    <textarea class="form-control" rows="4" name="message"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-7 col-sm-offset-3">
-                                                    <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary btn-block">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-6 col-sm-offset-2">
-                                                    
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        @Html.Partial("_NavBarContactForm")
                     </li>
-                    @*<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span><span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu" style="min-width: 223px;max-height: 43px;padding-top: 0px;">
-                            <li style="margin-top: -66px;margin-left: -30px;">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-1">
-                                        <div id="imaginary_container">
-                                            <div class="input-group stylish-input-group" style="width:220px">
-                                                <input type="text" class="form-control" placeholder="Search">
-                                                <span class="input-group-addon">
-                                                    <button type="submit" style="background-color: #1b3754; color:white">
-                                                        <span class="glyphicon glyphicon-search"></span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>                           
-                                </div>
-                            </li>
-                        </ul>
-                    </li>*@
                     @if (HttpContext.Current.User.Identity.IsAuthenticated)
                     {
                         <li class="dropdown">
@@ -180,7 +77,6 @@
                                 @Html.Partial("_LoginPartial")
                             </ul>
                         </li>
-
                     }
                 </ul>
             </div>

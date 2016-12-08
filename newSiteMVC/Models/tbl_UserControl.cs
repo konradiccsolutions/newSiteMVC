@@ -10,8 +10,6 @@ namespace newSiteMVC.Models
 
     public partial class tbl_UserControl
     {
-        private int? _priority;
-
         [Key]
         public int Id { get; set; }
 

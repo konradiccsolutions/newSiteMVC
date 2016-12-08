@@ -26,7 +26,8 @@ namespace newSiteMVC.Controllers
 
         public ActionResult Index()
         {
-            List<tbl_UserControl> tbl_UserControl = db.tbl_UserControl.Where(it => it.PageId == "Home").OrderBy(it => it.Priority).ToList();
+            List<tbl_UserControl> tbl_UserControl =
+                db.tbl_UserControl.Where(it => it.PageId == "Home").OrderBy(it => it.Priority).ToList();
             return View("Index", tbl_UserControl);
         }
 
@@ -54,7 +55,11 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour")] tbl_UserControl tbl_UserControl)
+        public ActionResult Create(
+            [Bind(
+                 Include =
+                     "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour"
+             )] tbl_UserControl tbl_UserControl)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +91,11 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int? id, [Bind(Include = "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,SectionBackgroundColour,SectionTextColour,SectionTextUnderlineColour,Priority")] tbl_UserControl tbl_UserControl)
+        public ActionResult Edit(int? id,
+            [Bind(
+                 Include =
+                     "Id,Title,Subtitle,MainText,ButtonText,ImageUrl,UrlLink,PageId,TypeId,Active,BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,SectionBackgroundColour,SectionTextColour,SectionTextUnderlineColour,Priority"
+             )] tbl_UserControl tbl_UserControl)
         {
             if (ModelState.IsValid)
             {
@@ -129,11 +138,15 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditSection([Bind(Include = "BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,SectionBackgroundColour,SectionTextColour,SectionTextUnderlineColour")] tbl_UserControl tbl_UserControl, int id)
+        public ActionResult EditSection(
+            [Bind(
+                 Include =
+                     "BackgroundColour,ButtonColour,ButtonTextColour,TitleColour,MainTextColour,SectionBackgroundColour,SectionTextColour,SectionTextUnderlineColour"
+             )] tbl_UserControl tbl_UserControl, int id)
         {
             if (ModelState.IsValid)
             {
-                List<tbl_UserControl> lstControlsl= db.tbl_UserControl.ToList();
+                List<tbl_UserControl> lstControlsl = db.tbl_UserControl.ToList();
                 tbl_UserControl userControl = lstControlsl.Single(it => it.Id == id);
 
                 string typeId = userControl.TypeId;
@@ -143,7 +156,7 @@ namespace newSiteMVC.Controllers
                 {
                     var list = newContext.tbl_UserControl;
 
-                    foreach (var el in list.Where(el => el.TypeId == typeId && el.PageId == pageId))
+                    foreach (var el in list.Where(el => (el.TypeId == typeId) && (el.PageId == pageId)))
                     {
                         el.BackgroundColour = tbl_UserControl.BackgroundColour;
                         el.ButtonColour = tbl_UserControl.ButtonColour;
@@ -190,32 +203,33 @@ namespace newSiteMVC.Controllers
 
         [HttpPost, ActionName("UpdateTableOrder")]
         public ActionResult UpdateTableOrder()
-        {                
+        {
             string[] newOrder = Request.Form["item.Priority"].ToString().Split(',');
             string[] id = Request.Form["item.Id"].ToString().Split(',');
             string pageId = null;
-            for (int i = 0; i <= newOrder.Length-1; i++)
+            for (int i = 0; i <= newOrder.Length - 1; i++)
             {
                 tbl_UserControl newTbls = db.tbl_UserControl.Find(Int32.Parse(id[i]));
                 newTbls.Priority = Int32.Parse(newOrder[i]);
                 pageId = newTbls.PageId;
                 db.SaveChanges();
-            }                     
+            }
             return Redirect("/Admin/GetActionResultForPage/" + pageId);
         }
 
 
         public ActionResult GetActionResultForPage(string id)
         {
-            List<tbl_UserControl> tbl_UserControl = db.tbl_UserControl.Where(it => it.PageId == id).OrderBy(it => it.Priority).ToList();
-            return View("Index",tbl_UserControl);
+            List<tbl_UserControl> tbl_UserControl =
+                db.tbl_UserControl.Where(it => it.PageId == id).OrderBy(it => it.Priority).ToList();
+            return View("Index", tbl_UserControl);
         }
 
 
         [HttpPost]
         public ActionResult Check(tbl_UserControl tbl_UserControl)
         {
-            return Json(new { success = true });
+            return Json(new {success = true});
         }
 
 
@@ -230,7 +244,7 @@ namespace newSiteMVC.Controllers
 
         [HttpPost]
         public ActionResult Upload(IEnumerable<HttpPostedFileBase> file, string returnurl, string fileType)
-        {         
+        {
             try
             {
                 var path = string.Empty;
@@ -262,7 +276,6 @@ namespace newSiteMVC.Controllers
                     returnurl = returnurl + "?Upload=success";
                     return Redirect(returnurl);
                 }
-                
             }
             catch
             {
@@ -270,6 +283,5 @@ namespace newSiteMVC.Controllers
                 return Redirect(returnurl + "?Upload=fail");
             }
         }
-
     }
 }

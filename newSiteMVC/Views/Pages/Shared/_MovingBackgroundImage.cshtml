@@ -1,6 +1,6 @@
 ﻿@model newSiteMVC.Models.tbl_UserControl
 
-@if (!String.IsNullOrEmpty(Model.ImageUrl))
+@if (!String.IsNullOrEmpty(Model.ImageUrl) && Model.PageId != "Home")
 {
     <div id="intro" style="background-image: url(@Model.ImageUrl); background-position-y: 0px;">
         <div class="intro-body">
