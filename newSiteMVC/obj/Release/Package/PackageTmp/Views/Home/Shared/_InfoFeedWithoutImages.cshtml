@@ -10,7 +10,7 @@
                         @foreach (var item in Model.Where(it => it.TypeId == "NewsFeed").OrderBy(it => it.Id))
                         {
                             <li class="news-item">
-                               @Html.ActionLink(item.Title, "LoadFullWidthPageContent", "Pages", new { Id = item.Id }, new { @class = "" })
+                               @Html.ActionLink(item.Title, "LoadPageContent", "Pages", new { Id = item.Id , PageId = item.PageId }, new { @class = "" })
                             </li>
                         }                      
                     </ul>

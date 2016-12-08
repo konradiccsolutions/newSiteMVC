@@ -1116,7 +1116,6 @@ img.scale {
 #intro {
 	height: 100%;
 	padding: 0;
-    background-position-y: -360px;
 }
 
 #intro .intro-body .intro-text {
@@ -1137,7 +1136,6 @@ img.scale {
 #intro .intro-body H1 {
 	height: 100%;
 	padding: 0;
-    background-position-y: 0px;
 }
 }
 

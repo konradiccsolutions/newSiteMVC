@@ -1,6 +1,6 @@
 ﻿@model newSiteMVC.Models.tbl_UserControl
 
-<div class="item active" style="background-color:@Model.BackgroundColour">
+<div class="item active" style="background-color:@Model.BackgroundColour; background-image: url(@Model.ImageUrl)">
     <div class="container">
         @if (!String.IsNullOrEmpty(@Model.ButtonText))
         {

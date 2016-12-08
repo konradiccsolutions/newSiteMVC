@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<newSiteMVC.Models.tbl_UserControl>
 
 @{
-    var twoColumnObject = Model.First(it => it.TypeId == "TwoColumn" || it.TypeId =="NewsFeed");
+    var twoColumnObject = Model.First(it => it.TypeId == "SingleColumn" || it.TypeId =="NewsFeed");
     var videoPodObject = Model.First();
 
     foreach (var item in Model)

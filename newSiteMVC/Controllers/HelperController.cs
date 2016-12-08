@@ -43,9 +43,9 @@ namespace newSiteMVC.Controllers
             string messageBody = Request.Form["message"].ToString();
 
             MailMessage message = new MailMessage();
-            message.From = new MailAddress("konrad.stoczynski@iccsolutions.com");
+            message.From = new MailAddress("contactus@iccsolutions.com");
             message.IsBodyHtml = true;
-            message.To.Add("konrad.stoczynski@iccsolutions.com");
+            message.To.Add("info@iccsolutions.com");
             message.Subject = "ICC Solutions - Customer's Enquiry";
             message.Body = "<p>First Name:" + " " + firstname + "</p>" + "<p>Last Name:" + " " + lastname + "</p>" +
                        "<p>Email:" + " " + email + "</p>" + "<p>Telephone:" + " " + telephone + "</p><br>" +
@@ -60,7 +60,7 @@ namespace newSiteMVC.Controllers
             smtp.Host = "smtp.office365.com";
             smtp.Port = 587;
             smtp.Credentials = new System.Net.NetworkCredential
-            ("konrad.stoczynski@iccsolutions.com", "Pioneer900813");
+            ("contactus@iccsolutions.com", "Abcd1234!");
             smtp.EnableSsl = true;
 
             return smtp;
