@@ -508,7 +508,7 @@
     <Content Include="Views\Pages\Shared\_OneColumnWithImageComponent.cshtml" />
     <Content Include="Views\Pages\Shared\_MovingBackgroundImage.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Pages\LoadOneColumnPageContent.cshtml" />
+    <Content Include="Views\Pages\LoadPageContent.cshtml" />
     <Content Include="Views\Pages\Shared\_PageTopBanner.cshtml" />
     <Content Include="Views\Admin\Shared\_TopBanner.cshtml" />
     <Content Include="Views\Admin\Shared\_ControlButtons.cshtml" />

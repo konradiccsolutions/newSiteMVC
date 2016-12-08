@@ -19,13 +19,13 @@ namespace newSiteMVC
             routes.MapRoute(
               name: "Page",
               url: "Page/{pageId}",
-              defaults: new { controller = "Pages", action = "LoadOneColumnPageContent", pageId = UrlParameter.Optional, Id = UrlParameter.Optional }
+              defaults: new { controller = "Pages", action = "LoadPageContent", pageId = UrlParameter.Optional, Id = UrlParameter.Optional }
           );
 
             routes.MapRoute(
                name: "News",
                url: "Page/{pageId}/News/{id}",
-               defaults: new { controller = "Pages", action = "LoadOneColumnPageContent", pageId = UrlParameter.Optional, Id = UrlParameter.Optional }
+               defaults: new { controller = "Pages", action = "LoadPageContent", pageId = UrlParameter.Optional, Id = UrlParameter.Optional }
            );
 
            

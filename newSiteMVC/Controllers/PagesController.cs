@@ -9,7 +9,7 @@ namespace newSiteMVC.Controllers
     {
         private StoreDB db = new StoreDB();
 
-        public ActionResult LoadOneColumnPageContent(string pageId, string id)
+        public ActionResult LoadPageContent(string pageId, string id)
         {
             if (pageId == "InTheNews")
             {
