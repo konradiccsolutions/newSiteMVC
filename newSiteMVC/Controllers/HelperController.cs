@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
+using reCAPTCHA.MVC;
 
 
 namespace newSiteMVC.Controllers
@@ -10,25 +11,31 @@ namespace newSiteMVC.Controllers
     {
         // GET: Helper
         [HttpPost, ActionName("ContactFormSendEmail")]
-        public ActionResult ContactFormSendEmail()
+        [CaptchaValidator]
+        public ActionResult ContactFormSendEmail(bool captchaValid)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-
                     MailMessage mailMessage = SetMailMessageDetails();
                     SmtpClient smtp = SetSmtpClientDetails();
 
                     smtp.Send(mailMessage);
                     SetEmailCookie("success");
-
+                                   
                 }
                 catch (Exception ex)
                 {
                     Console.Write(ex.Message);
                     SetEmailCookie("fail");
                 }
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Wrong captcha. Please try again.");
+                return Redirect("/Page/ContactUs");
+
             }
             ModelState.Clear();
             return Redirect("/Page/ContactUs");
@@ -39,16 +46,17 @@ namespace newSiteMVC.Controllers
             string firstname = Request.Form["firstname"].ToString();
             string lastname = Request.Form["lastname"].ToString();
             string email = Request.Form["email"].ToString();
-            string telephone = Request.Form["telephone"].ToString();
+            string company = Request.Form["company"].ToString();
+            string country = Request.Form["country"].ToString();
             string messageBody = Request.Form["message"].ToString();
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress("contactus@iccsolutions.com");
             message.IsBodyHtml = true;
-            message.To.Add("info@iccsolutions.com");
+            message.To.Add("konrad.stoczynski@iccsolutions.com");
             message.Subject = "ICC Solutions - Customer's Enquiry";
             message.Body = "<p>First Name:" + " " + firstname + "</p>" + "<p>Last Name:" + " " + lastname + "</p>" +
-                       "<p>Email:" + " " + email + "</p>" + "<p>Telephone:" + " " + telephone + "</p><br>" +
+                       "<p>Email:" + " " + email + "</p>" + "<p>Company:" + " " + company + "</p>"+ " <p> Country:" + " " + country + " </p><br>" +
                        "<p>Message:" + " " + messageBody + "</p>";
 
             return message;

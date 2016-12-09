@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <ul id="news1" style="overflow-y: hidden; height: 210px;">
-                        @foreach (var item in Model.Where(it => it.TypeId == "NewsFeed").OrderBy(it => it.Id))
+                        @foreach(var item in Model.Where(it => it.TypeId == "NewsFeed").OrderBy(it => it.Id).Take(10))
                         {
                             <li class="news-item">
                                @Html.ActionLink(item.Title, "LoadPageContent", "Pages", new { Id = item.Id , PageId = item.PageId }, new { @class = "" })

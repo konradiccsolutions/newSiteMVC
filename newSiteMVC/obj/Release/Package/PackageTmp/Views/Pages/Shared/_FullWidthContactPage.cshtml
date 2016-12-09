@@ -1,4 +1,5 @@
-﻿<div class="container">
+﻿@using reCAPTCHA.MVC
+<div class="container">
     <div class="row">
         
         @if (Request.Cookies["emailSent"]?.Value == "success")
@@ -52,7 +53,7 @@
         <div class="col-md-8">
             <h3>Send us a Message</h3>
             <br/>
-            <form role="form" method="post" action="@Url.Action("ContactFormSendEmail", "Helper")">
+            <form role="form" method="post" id="contactForm" action="@Url.Action("ContactFormSendEmail", "Helper")">
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>First Name:</label>
@@ -69,14 +70,20 @@
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Phone Number:</label>
-                        <input type="tel" style="max-width: 1000px" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Please enter your phone number.">
+                        <label>Email Address:</label>
+                        <input type="email" style="max-width: 1000px" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Email Address:</label>
-                        <input type="email" style="max-width: 1000px" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                        <label>Company:</label>
+                        <input type="text" style="max-width: 1000px" class="form-control" id="company" name="company" value="">
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label>Country:</label>
+                        <input type="text" style="max-width: 1000px" class="form-control" id="country" name="country" value="">
                     </div>
                 </div>
                 <div class="control-group form-group">
@@ -84,11 +91,20 @@
                         <label>Message:</label>
                         <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                     </div>
-                </div>             
-                <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>                
+                @*-----Captcha Validation-----*@
+
+                <div class="g-recaptcha" data-sitekey="6LcQVw4UAAAAAEaUIbWIKTqtm_LBKEJsfpNVm4wr" data-callback="enableBtn"></div>
+                <br/>
+                <button type="submit" class="btn btn-primary" id="submitButton" disabled>Send Message</button>
             </form>
+
         </div>
     </div>
 </div>
 
+<script type="text/javascript">
+    function enableBtn() {
+        document.getElementById("submitButton").disabled = false;
+    }
+</script>

@@ -1,4 +1,4 @@
-﻿<ul id="login-dp" class="dropdown-menu" style="min-width: 490px;padding-top: 10px;left: -136px; max-height: 390px;">
+﻿<ul id="login-dp" class="dropdown-menu" style="min-width: 490px;padding-top: 10px;left: -136px; max-height: 550px;">
     <li style="margin-top: -40px;">
         <div class="row">
             <div class="col-md-12">
@@ -22,9 +22,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="col-sm-3 control-label">Telephone</label>
+                        <label for="company" class="col-sm-3 control-label">Company</label>
                         <div class="col-sm-7">
-                            <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="01234567890" value="">
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Company" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="col-sm-3 control-label">Country</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="country" name="country" placeholder="Country" value="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -35,7 +41,12 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-7 col-sm-offset-3">
-                            <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary btn-block">
+                            @if (Request.RawUrl != "/Page/ContactUs")
+                            {
+                                <div class="g-recaptcha" data-sitekey="6LezXg4UAAAAAOZvDPmVyGdfuwjN8L11JYLIZaNr" data-callback="enableBtn2"></div>
+                            }
+                            <br/>
+                            <button type="submit" class="btn btn-primary btn-block" id="submitButton2" disabled>Send Message</button>
                         </div>
                     </div>
                     <div class="form-group">
@@ -48,3 +59,9 @@
         </div>
     </li>
 </ul>
+
+<script type="text/javascript">
+    function enableBtn2() {
+        document.getElementById("submitButton2").disabled = false;
+    }
+</script>

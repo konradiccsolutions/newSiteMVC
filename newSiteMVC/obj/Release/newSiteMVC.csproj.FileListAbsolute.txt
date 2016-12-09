@@ -51,3 +51,4 @@ C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\Microsoft.Owin.Security
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Release\newSiteMVC.csprojResolveAssemblyReference.cache
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Release\newSiteMVC.dll
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Release\newSiteMVC.pdb
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\reCAPTCHA.MVC.dll
