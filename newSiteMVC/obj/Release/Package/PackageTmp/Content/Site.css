@@ -1195,3 +1195,22 @@ img.scale {
 /* Moving Background Image */
 /*--------------------*/
 /*--------------------*/
+
+ .banner-logo {
+    height: auto;
+    width: 60px;
+    margin-right: 35px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+@media(min-width:768px) {
+.banner-logo {
+    height: auto;
+    width: 80px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+}
