@@ -1214,3 +1214,13 @@ img.scale {
     margin-top: 10px;
 }
 }
+
+.top-banner-attachment {
+    background-attachment: local !important;
+}
+
+@media(min-width:768px) {
+    .top-banner-attachment {
+    background-attachment: fixed !important;
+}
+}

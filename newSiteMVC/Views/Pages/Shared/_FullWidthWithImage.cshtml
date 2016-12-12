@@ -42,64 +42,16 @@
             
         </div>
     </div>
-    
-    @if (twoColumnObject.PageId != "AboutUs" && twoColumnObject.PageId != "InTheNews" && twoColumnObject.PageId != "Careers")
-    {
-        <div class="row" style="margin-top: -70px">
-            <div class="col-lg-12">
-                <h3 class="page-header">Other Products</h3>
-            </div>
+    @{
+        string[] listOfPages = new string[] { "DeviceTesting", "VantivViable", "HostSimulation", "TrainingCards", "DeveloperTool", "CardTesting"};
 
-            @if (twoColumnObject.PageId != "DeviceTesting")
+        foreach (var item in listOfPages)
+        {
+            if (@Request.RawUrl == "/Page/" + item)
             {
-                <div class="col-sm-2 col-xs-6">
-                    <a href="/Page/DeviceTesting">
-                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/device-testing.jpg" alt="">
-                    </a>
-                </div>
+                @Html.Partial("~/Views/Pages/Shared/_OtherProductsBar.cshtml", twoColumnObject)
             }
-            @if (twoColumnObject.PageId != "VantivViable")
-            {
-                <div class="col-sm-2 col-xs-6">
-                    <a href="/Page/VantivViable">
-                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/vantiv.jpg" alt="">
-                    </a>
-                </div>
-            }
-            @if (twoColumnObject.PageId != "HostSimulation")
-            {
-                <div class="col-sm-2 col-xs-6">
-                    <a href="/Page/HostSimulation">
-                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/host-simulation.png" alt="">
-                    </a>
-                </div>
-            }
-            @if (twoColumnObject.PageId != "TrainingCards")
-            {
-                <div class="col-sm-2 col-xs-6">
-                    <a href="/Page/TrainingCards">
-                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/training-cards.jpg" alt="">
-                    </a>
-                </div>
-            }
-            @if (twoColumnObject.PageId != "DeveloperTool")
-            {
-                <div class="col-sm-2 col-xs-6">
-                    <a href="/Page/DeveloperTool">
-                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/script-tools.png" alt="">
-                    </a>
-                </div>
-            }
-            @if (twoColumnObject.PageId != "CardTesting")
-            {
-                <div class="col-sm-2 col-xs-6">
-                    <a href="/Page/CardTesting">
-                        <img class="img-responsive img-hover img-related crop-height-110" src="/Img/card-testing.jpg" alt="">
-                    </a>
-                </div>
-            }
-                     
-        </div>
+        }
     }
     
 </div>

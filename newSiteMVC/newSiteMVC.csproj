@@ -569,6 +569,7 @@
     <Content Include="Views\Admin\Shared\_FormNewsFeed.cshtml" />
     <Content Include="Views\Shared\_NavBarClientAreaLogin.cshtml" />
     <Content Include="Views\Shared\_NavBarContactForm.cshtml" />
+    <Content Include="Views\Pages\Shared\_OtherProductsBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
