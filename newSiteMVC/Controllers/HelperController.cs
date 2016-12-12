@@ -9,7 +9,6 @@ namespace newSiteMVC.Controllers
 {
     public class HelperController : Controller
     {
-        // GET: Helper
         [HttpPost, ActionName("ContactFormSendEmail")]
         [CaptchaValidator]
         public ActionResult ContactFormSendEmail(bool captchaValid)
@@ -51,13 +50,13 @@ namespace newSiteMVC.Controllers
             string messageBody = Request.Form["message"].ToString();
 
             MailMessage message = new MailMessage();
-            message.From = new MailAddress("contactus@iccsolutions.com");
-            message.IsBodyHtml = true;
-            message.To.Add("konrad.stoczynski@iccsolutions.com");
-            message.Subject = "ICC Solutions - Customer's Enquiry";
-            message.Body = "<p>First Name:" + " " + firstname + "</p>" + "<p>Last Name:" + " " + lastname + "</p>" +
-                       "<p>Email:" + " " + email + "</p>" + "<p>Company:" + " " + company + "</p>"+ " <p> Country:" + " " + country + " </p><br>" +
-                       "<p>Message:" + " " + messageBody + "</p>";
+                message.From = new MailAddress("contactus@iccsolutions.com");
+                message.IsBodyHtml = true;
+                message.To.Add("info@iccsolutions.com");
+                message.Subject = "ICC Solutions - Customer's Enquiry";
+                message.Body = "<p>First Name:" + " " + firstname + "</p>" + "<p>Last Name:" + " " + lastname + "</p>" +
+                           "<p>Email:" + " " + email + "</p>" + "<p>Company:" + " " + company + "</p>"+ " <p>Country:" + " " + country + " </p><br>" +
+                           "<p>Message:" + " " + messageBody + "</p>";
 
             return message;
         }
@@ -65,11 +64,11 @@ namespace newSiteMVC.Controllers
         private SmtpClient SetSmtpClientDetails()
         {
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.office365.com";
-            smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential
-            ("contactus@iccsolutions.com", "Abcd1234!");
-            smtp.EnableSsl = true;
+                smtp.Host = "smtp.office365.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential
+                ("contactus@iccsolutions.com", "Abcd1234!");
+                smtp.EnableSsl = true;
 
             return smtp;
         }
