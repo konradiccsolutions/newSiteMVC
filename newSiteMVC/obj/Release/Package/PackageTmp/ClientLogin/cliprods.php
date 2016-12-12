@@ -14,70 +14,158 @@
 
 <style type="text/css">
 
+
+
 .style1 {
+
 	font-family: Arial, Helvetica, sans-serif;
+
 }
+
+
 
 .style2 {
 
+
+
 				font-family: Arial, Helvetica, sans-serif;
+
+
 
 				font-weight: bold;
 
+
+
 				font-size: small;
+
+
 
 				color: #012346;
 
+
+
 }
+
+
 
 .style3 {
+
 	font-size: small;
+
 }
 
+
+
 .style5 {
+
 	font-size: small;
+
 	color: #012346;
+
 }
+
+
 
 .style6 {
 
+
+
 				font-family: Verdana;
+
+
 
 				font-size: small;
 
+
+
 				color: #012346;
 
+
+
 }
+
+
 
 .style7 {
 
+
+
 				color: #012346;
 
+
+
 }
+
+
 
 .style8 {
+
 	font-family: Arial, Helvetica, sans-serif;
+
 	font-size: small;
+
 	color: #012346;
-}
-.style9 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: small;
+
 }
 
+.style9 {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: small;
+
+}
+
+
+
 .style10 {
+
 	border-left-style: none;
+
 	border-left-width: medium;
+
 	border-right-style: none;
+
 	border-right-width: medium;
+
 	border-bottom-style: none;
+
 	border-bottom-width: medium;
+
 }
+
 .style11 {
+
 	border-left-width: 0px;
+
 	border-right-width: 0px;
+
 	border-bottom-width: 0px;
+
 }
+
+
+
+.auto-style1 {
+	color: #808080;
+}
+.auto-style3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #808080;
+	text-align: center;
+}
+.auto-style5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: small;
+	color: #808080;
+}
+.auto-style6 {
+	text-align: center;
+}
+
+
 
 </style>
 
@@ -299,32 +387,19 @@ location.href="expired.php";
 
 
 
-				<p class="style8">To download the latest update, click on the highlighted link.</p>
+				<p class="auto-style3">To download the latest update, click on the highlighted link.</p>
 
-<p class="style8"><strong>Please refer to the password next to the download to unzip the 
+<p class="auto-style3"><strong>Please refer to the password next to the download to unzip the 
 
 				file.</strong></p>
 
-<p class="style8">Instructions for installation and usage will be in your update email.</p>
+<p class="auto-style3">Instructions for installation and usage will be in your update email.</p>
 
-				<p><span class="style2">Please Note:</span><span class="style1"><span class="style3"><span class="style7"> Downloads are packaged as zip files.&nbsp; You will need to use WinZip, or a similar product to
+				<p class="auto-style6"><span class="auto-style5">Please Note:</span><span class="style1"><span class="style3"><span class="auto-style1"> Downloads are packaged as zip files.</span></span></span></p>						<p class="auto-style6"><span class="style1">						<span class="style3"><span class="auto-style1"> You will need to use WinZip, or a similar product to
 
 extract and install the update.</span></span></span></p>
 
-<p><strong>
-
-<span class="style6">
-
-<img alt="" src="images/video_icon.gif" width="16" height="16" class="style1"></span> 
-
-<span class="style8">Why choose ICC Solutions?</span></strong><span class="style1"><span class="style5">&nbsp;
-
-</span>
-
-<strong><span class="style5">
-<a target="_top" href="http://www.iccsolutions.com/News/Video/index.html">Watch a short video 
-
-presentation here &gt;&gt;</a></span></strong></span></p></div></td>
+					</div></td>
 
 				</tr>
 
