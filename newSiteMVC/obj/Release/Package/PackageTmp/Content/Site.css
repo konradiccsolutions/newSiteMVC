@@ -28,7 +28,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"] {
-    max-width: 280px;
+    width:100%
 }
 
 /* Responsive: Portrait tablets and up */
@@ -1223,4 +1223,9 @@ img.scale {
     .top-banner-attachment {
     background-attachment: fixed !important;
 }
+}
+
+.nav-contact-form {
+    min-width: 500px !important;
+    left: -150px !important;
 }
