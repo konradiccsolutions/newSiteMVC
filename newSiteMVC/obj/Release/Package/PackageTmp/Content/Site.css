@@ -23,13 +23,13 @@ body {
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input[type="text"],
+/*input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"] {
     width:100%
-}
+}*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -141,10 +141,7 @@ width: 600px;
     background-color: #1b3754;
 	padding: 60px 40px;
 	color: rgba(255,255,255,1.00);
-	margin-bottom: 20px;
-	border-bottom-right-radius: 6px;
 	border-top-left-radius: 0px;
-	border-bottom-left-radius: 6px;
 }
 .footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
 .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
