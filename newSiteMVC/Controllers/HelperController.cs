@@ -91,7 +91,7 @@ namespace newSiteMVC.Controllers
         public static List<tbl_UserControl> GetCachedControls()
         {
             var memoryCache = MemoryCache.Default;
-
+                      
             if (!memoryCache.Contains("userControls"))
             {
                 var expiration = DateTimeOffset.UtcNow.AddMinutes(5);

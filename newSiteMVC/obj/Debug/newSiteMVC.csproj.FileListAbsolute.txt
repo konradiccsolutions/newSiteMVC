@@ -262,5 +262,4 @@ C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\Microsoft.Owin.Security
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\newSiteMVC.dll.CodeAnalysisLog.xml
-C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\bin\newSiteMVC.dll.lastcodeanalysissucceeded
+C:\Users\stoczynskik\Documents\newSiteMVC\newSiteMVC\obj\Debug\newSiteMVC.csprojResolveAssemblyReference.cache

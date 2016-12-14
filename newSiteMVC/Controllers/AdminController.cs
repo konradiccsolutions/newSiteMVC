@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading;
 using System.Web;
@@ -66,6 +67,7 @@ namespace newSiteMVC.Controllers
                 tbl_UserControl.TypeId = Request.QueryString["TypeId"];
                 db.tbl_UserControl.Add(tbl_UserControl);
                 db.SaveChanges();
+                MemoryCache.Default.Remove("userControls");
                 return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
             }
 
@@ -115,6 +117,7 @@ namespace newSiteMVC.Controllers
                     el.Active = tbl_UserControl.Active;
                 }
                 db.SaveChanges();
+                MemoryCache.Default.Remove("userControls");
             }
             return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
         }
@@ -167,6 +170,7 @@ namespace newSiteMVC.Controllers
                         el.SectionTextUnderlineColour = tbl_UserControl.SectionTextUnderlineColour;
                     }
                     newContext.SaveChanges();
+                    MemoryCache.Default.Remove("userControls");
                 }
                 return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
             }
@@ -196,6 +200,7 @@ namespace newSiteMVC.Controllers
             tbl_UserControl tbl_UserControl = db.tbl_UserControl.Find(id);
             db.tbl_UserControl.Remove(tbl_UserControl);
             db.SaveChanges();
+            MemoryCache.Default.Remove("userControls");
             return Redirect("/Admin/GetActionResultForPage/" + Request.QueryString["pageType"]);
         }
 
@@ -212,6 +217,7 @@ namespace newSiteMVC.Controllers
                 newTbls.Priority = Int32.Parse(newOrder[i]);
                 pageId = newTbls.PageId;
                 db.SaveChanges();
+                MemoryCache.Default.Remove("userControls");
             }
             return Redirect("/Admin/GetActionResultForPage/" + pageId);
         }
