@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
+using System.Runtime.Caching;
+using System.Web.Caching;
+using newSiteMVC.Models;
 using reCAPTCHA.MVC;
 
 
@@ -9,6 +14,9 @@ namespace newSiteMVC.Controllers
 {
     public class HelperController : Controller
     {
+
+        private static StoreDB db = new StoreDB();
+
         [HttpPost, ActionName("ContactFormSendEmail")]
         [CaptchaValidator]
         public ActionResult ContactFormSendEmail(bool captchaValid)
@@ -78,6 +86,20 @@ namespace newSiteMVC.Controllers
             var userCookie = new HttpCookie("emailSent", state);
             userCookie.Expires = DateTime.Now.AddSeconds(10.0);
             HttpContext.Response.Cookies.Add(userCookie);
+        }
+
+        public static List<tbl_UserControl> GetCachedControls()
+        {
+            var memoryCache = MemoryCache.Default;
+
+            if (!memoryCache.Contains("userControls"))
+            {
+                var expiration = DateTimeOffset.UtcNow.AddMinutes(5);
+                var listOfControls = db.tbl_UserControl.ToList();
+
+                memoryCache.Add("userControls", listOfControls, expiration);
+            }
+            return memoryCache.Get("userControls", null) as List<tbl_UserControl>;
         }
     }
 }

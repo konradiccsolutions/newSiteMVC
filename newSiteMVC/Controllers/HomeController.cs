@@ -14,7 +14,8 @@ namespace newSiteMVC.Controllers
 
         public ActionResult Index()
         {
-            List<tbl_UserControl> tbl_UserControls = db.tbl_UserControl.Where(it => it.Active == true).OrderBy(it => it.Priority).ToList();
+            List<tbl_UserControl> tbl_UserControls = HelperController.GetCachedControls();
+            tbl_UserControls = tbl_UserControls.Where(it => it.Active == true).OrderBy(it => it.Priority).ToList();
             return View(tbl_UserControls);
         }
     }
