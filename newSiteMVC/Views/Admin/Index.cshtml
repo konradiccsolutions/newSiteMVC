@@ -75,7 +75,14 @@
                         <br/>
                         @Html.Partial("~/Views/Admin/Shared/_ControlButtons.cshtml", newModel)
                         <br/>
-                        @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel)
+                        @if (type == "NewsFeed")
+                        {
+                            @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel.OrderByDescending(it => it.Priority))
+                        }
+                        else
+                        {
+                            @Html.Partial("~/Views/Admin/Shared/_ContentTable.cshtml", newModel)
+                        }
                     </div>
                 }
                 else

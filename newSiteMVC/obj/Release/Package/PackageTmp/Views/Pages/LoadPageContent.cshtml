@@ -26,7 +26,7 @@
 
 @if (@Request.RawUrl == "/Page/InTheNews")
 {
-    @Html.Partial("~/Views/Pages/Shared/_SingleRowWithLinkComponent.cshtml", Model)
+    @Html.Partial("~/Views/Pages/Shared/_SingleRowWithLinkComponent.cshtml", Model.OrderByDescending(it => it.Priority))
 
 }
 
