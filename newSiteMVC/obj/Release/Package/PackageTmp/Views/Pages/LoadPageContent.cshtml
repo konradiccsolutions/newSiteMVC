@@ -11,19 +11,17 @@
 
 @*<%--------------------- Main page content ---------------------%>*@
 
-@foreach (var item in Model.Where(it => it.TypeId != "NewsFeed"))
+@foreach (var item in Model.Where(it => it.TypeId == "SingleRow"))
 {
-    if ( item.TypeId != "TopBanner" && item.TypeId != "SingleColumn" && item.TypeId != "VideoPod")
+    if (string.IsNullOrEmpty(item.ImageUrl))
     {
-        if (string.IsNullOrEmpty(item.ImageUrl))
-        {
-            @Html.Partial("~/Views/Pages/Shared/_SingleRowComponent.cshtml", item)
-        }
-        else
-        {
-            @Html.Partial("~/Views/Pages/Shared/_SingleRowWithImageComponent.cshtml", item)
-        }
+        @Html.Partial("~/Views/Pages/Shared/_SingleRowComponent.cshtml", item)
     }
+    else
+    {
+        @Html.Partial("~/Views/Pages/Shared/_SingleRowWithImageComponent.cshtml", item)
+    }
+ 
 }
 
 @if (@Request.RawUrl == "/Page/InTheNews")

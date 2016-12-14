@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <ul class="news1" style="overflow-y: hidden; height: 210px;">
-                        @foreach (var item in Model.Where(it => it.TypeId == "EventsFeed"))
+                        @foreach (var item in Model.Where(it => it.TypeId == "SingleRow" && it.PageId== "Events"))
                         {
                             <li style="display: none;" class="news-item">
                                 <table cellpadding="4">
