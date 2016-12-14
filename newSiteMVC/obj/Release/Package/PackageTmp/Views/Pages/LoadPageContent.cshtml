@@ -32,6 +32,11 @@
 
 }
 
+@if (Regex.Replace(Request.FilePath, "[0-9]", "") == "/Page/InTheNews/News/")
+{
+    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.Where(it => it.Id.ToString() == ViewBag.NewsId))
+}
+
 @if (@Request.RawUrl == "/Page/ContactUs")
 {
     @Html.Partial("~/Views/Pages/Shared/_FullWidthContactPage.cshtml", Model)
@@ -48,15 +53,7 @@
         }
     }
 }
-@{
-    string path = Request.FilePath;
-    string withoutNumbers = Regex.Replace(Request.FilePath, "[0-9]", "");
-}
 
-@if (withoutNumbers == "/Page/InTheNews/News/")
-{
-    @Html.Partial("~/Views/Pages/Shared/_FullWidthWithImage.cshtml", Model.Where(it => it.Id.ToString() == ViewBag.NewsId))
-}
 @*<%--------------------- Moving Background Image ---------------------%>**@
 
     @Html.Partial("~/Views/Pages/Shared/_MovingBackgroundImage.cshtml", @Model.First(it => it.TypeId == "TopBanner"))
