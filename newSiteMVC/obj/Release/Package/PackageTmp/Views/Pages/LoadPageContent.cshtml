@@ -17,18 +17,18 @@
     {
         if (string.IsNullOrEmpty(item.ImageUrl))
         {
-            @Html.Partial("~/Views/Pages/Shared/_OneColumnComponent.cshtml", item)
+            @Html.Partial("~/Views/Pages/Shared/_SingleRowComponent.cshtml", item)
         }
         else
         {
-            @Html.Partial("~/Views/Pages/Shared/_OneColumnWithImageComponent.cshtml", item)
+            @Html.Partial("~/Views/Pages/Shared/_SingleRowWithImageComponent.cshtml", item)
         }
     }
 }
 
 @if (@Request.RawUrl == "/Page/InTheNews")
 {
-    @Html.Partial("~/Views/Pages/Shared/_OneColumnWithLinkComponent.cshtml", Model)
+    @Html.Partial("~/Views/Pages/Shared/_SingleRowWithLinkComponent.cshtml", Model)
 
 }
 
