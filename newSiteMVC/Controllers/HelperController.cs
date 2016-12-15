@@ -101,5 +101,13 @@ namespace newSiteMVC.Controllers
             }
             return memoryCache.Get("userControls", null) as List<tbl_UserControl>;
         }
+
+        public static void RemoveCache()
+        {
+            foreach (var element in MemoryCache.Default)
+            {
+                MemoryCache.Default.Remove(element.Key);
+            }
+        }
     }
 }
