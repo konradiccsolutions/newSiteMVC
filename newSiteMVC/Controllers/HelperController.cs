@@ -29,12 +29,14 @@ namespace newSiteMVC.Controllers
                     SmtpClient smtp = SetSmtpClientDetails();
 
                     smtp.Send(mailMessage);
+
                     SetEmailCookie("success");
                                    
                 }
                 catch (Exception ex)
                 {
                     Console.Write(ex.Message);
+
                     SetEmailCookie("fail");
                 }
             }
@@ -58,25 +60,26 @@ namespace newSiteMVC.Controllers
             string messageBody = Request.Form["message"].ToString();
 
             MailMessage message = new MailMessage();
-                message.From = new MailAddress("contactus@iccsolutions.com");
-                message.IsBodyHtml = true;
-                message.To.Add("info@iccsolutions.com");
-                message.Subject = "ICC Solutions - Customer's Enquiry";
-                message.Body = "<p>First Name:" + " " + firstname + "</p>" + "<p>Last Name:" + " " + lastname + "</p>" +
-                           "<p>Email:" + " " + email + "</p>" + "<p>Company:" + " " + company + "</p>"+ " <p>Country:" + " " + country + " </p><br>" +
-                           "<p>Message:" + " " + messageBody + "</p>";
+                        message.From = new MailAddress("contactus@iccsolutions.com");
+                        message.IsBodyHtml = true;
+                        message.To.Add("info@iccsolutions.com");
+                        message.Subject = "ICC Solutions - Customer's Enquiry";
+
+                        message.Body = "<p>First Name:" + " " + firstname + "</p>" + "<p>Last Name:" + " " + lastname + "</p>" +
+                                    "<p>Email:" + " " + email + "</p>" + "<p>Company:" + " " + company + "</p>"+ " <p>Country:" + " " + country + " </p><br>" +
+                                    "<p>Message:" + " " + messageBody + "</p>";
 
             return message;
         }
 
         private SmtpClient SetSmtpClientDetails()
         {
-            SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.office365.com";
-                smtp.Port = 587;
-                smtp.Credentials = new System.Net.NetworkCredential
-                ("contactus@iccsolutions.com", "Abcd1234!");
-                smtp.EnableSsl = true;
+             SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.office365.com";
+                        smtp.Port = 587;
+                        smtp.Credentials = new System.Net.NetworkCredential
+                        ("contactus@iccsolutions.com", "Abcd1234!");
+                        smtp.EnableSsl = true;
 
             return smtp;
         }
@@ -84,7 +87,9 @@ namespace newSiteMVC.Controllers
         private void SetEmailCookie(string state)
         {
             var userCookie = new HttpCookie("emailSent", state);
+
             userCookie.Expires = DateTime.Now.AddSeconds(10.0);
+
             HttpContext.Response.Cookies.Add(userCookie);
         }
 

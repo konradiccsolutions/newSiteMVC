@@ -16,6 +16,7 @@ namespace newSiteMVC.Controllers
         {
             List<tbl_UserControl> tbl_UserControls = HelperController.GetCachedControls();
             tbl_UserControls = tbl_UserControls.Where(it => it.Active == true).OrderBy(it => it.Priority).ToList();
+
             return View(tbl_UserControls);
         }
     }
