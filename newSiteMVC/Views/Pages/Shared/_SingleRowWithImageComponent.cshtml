@@ -62,3 +62,11 @@
             </div>
         </section>
     }
+@if (@Request.RawUrl == "/Page/ICCSupport")
+{
+    <script src="/Scripts/iccZendesk.js" type="text/javascript" language="javascript"></script>
+}
+@if (@Request.RawUrl == "/Page/VantivSupport")
+{
+    <script src="/Scripts/vantivZendesk.js" type="text/javascript" language="javascript"></script>
+}
